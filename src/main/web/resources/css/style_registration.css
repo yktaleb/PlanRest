@@ -1,0 +1,81 @@
+html {
+    height: 100%;
+}
+
+body {
+    margin: 0;
+    height: 100%;
+    background-image: url('../images/fon.jpg');
+    background-size: cover;
+}
+
+caption {
+    font-size: 250%
+}
+
+#authorization {
+
+    width: 270px;
+    height: 520px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    margin: auto;
+    background-color: rgba(112, 128, 144, 0.6);
+    border: 2px solid silver;
+    padding: 15px;
+    border-radius: 15px;
+    font-style: normal;
+    font-weight: 100;
+
+}
+
+.loginAndPassword {
+    font-size: 0.9em;
+    font-family: cursive;
+}
+
+p {
+    display: block;
+    -webkit-margin-before: 1em;
+    -webkit-margin-after: 1em;
+    -webkit-margin-start: 0px;
+    -webkit-margin-end: 0px;
+}
+
+.inputText {
+    font-size: 18px;
+    font-family: sans-serif;
+    width: 265px;
+}
+
+label.radio {
+    property: inherit;
+    font-family: inherit;
+
+}
+
+.btnLog {
+
+    text-align: center;
+    padding: 7px 22px;
+    border: solid 1px #004F72;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+
+    color: #E5FFFF;
+    /*background:#2755b8; */
+    background: #0D8684;
+    -webkit-box-shadow: 0px 0px 2px #fafafa, inset 0px 0px 1px #ffffff;
+    -moz-box-shadow: 0px 0px 2px #fafafa, inset 0px 0px 1px #ffffff;
+    box-shadow: 0px 0px 2px #fafafa, inset 0px 0px 1px #ffffff;
+    opacity: 0.99;
+    -ms-filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=99);
+    filter: alpha(opacity=99);
+    text-shadow: 3px 0px 4px #56802e;
+    filter: dropshadow(color=#56802e, offx=3, offy=0);
+}
+

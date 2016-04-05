@@ -1,0 +1,116 @@
+html {
+    background: url('../images/1.jpg');
+    background-size: 100%;
+    font-family: sans-serif;
+}
+
+#btnLog {
+    display: inline-block;
+    color: #59818f;
+    font-weight: 900;
+    padding: .5em 2em;
+    border: 2px solid;
+    border-radius: 5px;
+    float: right;
+
+}
+
+#btnReg {
+    display: inline-block;
+    color: #59818f;
+    font-weight: 900;
+    text-decoration: none;
+    user-select: none;
+    padding: .5em 2em;
+    outline: none;
+    border: 2px solid;
+
+    border-radius: 5px;
+    float: left;
+
+}
+
+a:link {
+    text-decoration: none;
+    color: #000000;
+}
+
+a:visited {
+    text-decoration: none;
+    color: #000000;
+}
+
+a:active {
+    text-decoration: underline;
+    color: #000000;
+}
+
+a:hover {
+    text-decoration: underline;
+    color: #000000;
+}
+
+#help {
+    float: right;
+
+}
+
+#authorization {
+    /*Выравнивание блока по центру 10-18*/
+    width: 270px;
+    height: 320px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    margin: auto;
+    background-color: rgba(112, 128, 144, 0.8);
+    border: 2px solid silver;
+    padding: 15px;
+    border-radius: 15px;
+
+}
+
+.loginAndPassword {
+    font-size: 1.3em;
+    font-family: sans-serif;
+
+}
+
+.inputText {
+    font-size: 18px;
+    font-family: sans-serif;
+    width: 265px;
+
+}
+
+/*.buttonUp{
+	text-decoration: none; 
+	text-align:center; 
+	padding:9px 23px;  
+	-webkit-border-radius:5px;
+	-moz-border-radius:5px; 
+	border-radius: 5px; 
+	font:17px Arial, Helvetica, sans-serif; 
+	font-weight:bold; 
+	color:#ffffff; 
+	background:#59818f; 
+	box-shadow:0px 0px 2px #bababa, inset 0px 0px 1px #ffffff; 
+	float: right;	
+  }
+
+.buttonReg{
+	text-decoration: none; 
+	text-align:center; 
+	padding:9px 23px;  
+	-webkit-border-radius:5px;
+	-moz-border-radius:5px; 
+	border-radius: 5px; 
+	font:17px Arial, Helvetica, sans-serif; 
+	font-weight:bold; 
+	color:#ffffff; 
+	background:#59818f; 
+	box-shadow:0px 0px 2px #bababa, inset 0px 0px 1px #ffffff; 
+	float: left;
+}*/
