@@ -25,7 +25,7 @@
             <br/> <br/>
             <input type="submit" value="Войти" id="btnLog" >
             <input type="submit" value="Регистрация" id="btnReg">
-            <input type="checkbox" name="_spring_security_remember_me"/>
+            <input type="checkbox" name="_spring_security_remember_me" value="Remember me"/>
             <br/>
             <a href="#" id="help">Забыли пороль?</a>
             <br/>
