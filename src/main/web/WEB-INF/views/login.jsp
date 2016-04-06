@@ -18,18 +18,17 @@
 
     <form name="form_login" action="j_spring_security_check" method="POST">
         <div id="authorization">
-            <p class="loginAndPassword">Login</p>
+            <p class="loginAndPassword">Email</p>
             <input type="Text" id="login" class="inputText" name="email"/>
             <p class="loginAndPassword">Password</p>
             <input type="Password" id="password" class="inputText" name="password"/>
             <br/> <br/>
-            <input type="submit" value="Войти" id="btnLog" >
-            <input type="submit" value="Регистрация" id="btnReg">
-            <input type="checkbox" name="_spring_security_remember_me" value="Remember me"/>
+            <input type="submit" value="Login" id="btnLog" >
             <br/>
-            <a href="#" id="help">Забыли пороль?</a>
+            <input type="checkbox" name="_spring_security_remember_me">Remember me</input>
             <br/>
-            <p>Неверный логин или пароль</p>
+            <a href="#" id="help">Forgot password?</a>
+            <a href="registration" id="registration">Sign up now!</a>
         </div>
 
     </form>
