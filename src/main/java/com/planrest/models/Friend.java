@@ -4,10 +4,14 @@ import javax.persistence.*;
 
 @Entity
 @Table(name = "friend", schema = "PlanRest")
-public class Friend {
+public class Friend extends Model{
 
     public Friend() {
+        super();
+    }
 
+    public Friend(Long id) {
+        super(id);
     }
 
     public Friend(Profile friend) {
@@ -17,7 +21,7 @@ public class Friend {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id", nullable = false)
-    private int id;
+    private Long id;
 
     @ManyToOne
     @JoinColumn(name = "profile_id", nullable = false)
@@ -27,11 +31,11 @@ public class Friend {
     @JoinColumn(name = "id_friend", nullable = false)
     private Profile friend;
 
-    public int getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(Long id) {
         this.id = id;
     }
 

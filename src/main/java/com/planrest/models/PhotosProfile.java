@@ -4,11 +4,16 @@ import javax.persistence.*;
 
 @Entity
 @Table(name = "photos_profile", schema = "PlanRest")
-public class PhotosProfile {
+public class PhotosProfile extends Model{
 
     public PhotosProfile() {
-
+        super();
     }
+
+    public PhotosProfile(Long id) {
+        super(id);
+    }
+
 
     public PhotosProfile(byte[] photo) {
         this.photo = photo;
@@ -17,7 +22,7 @@ public class PhotosProfile {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id", nullable = false)
-    private int id;
+    private Long id;
 
     @Column(name = "photo", nullable = false)
     private byte[] photo;
@@ -34,11 +39,11 @@ public class PhotosProfile {
         this.photo = photo;
     }
 
-    public int getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(Long id) {
         this.id = id;
     }
 

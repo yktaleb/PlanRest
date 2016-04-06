@@ -4,14 +4,17 @@ import javax.persistence.*;
 
 @Entity
 @Table(name = "category_of_institution", schema = "PlanRest")
-public class CategoryOfInstitution {
+public class CategoryOfInstitution extends Model{
 
     public CategoryOfInstitution() {
-
+        super();
     }
 
-    public CategoryOfInstitution(int id, String name, int institutionId) {
-        this.id = id;
+    public CategoryOfInstitution(Long id) {
+        super(id);
+    }
+
+    public CategoryOfInstitution(String name, int institutionId) {
         this.name = name;
         this.institutionId = institutionId;
     }
@@ -19,7 +22,7 @@ public class CategoryOfInstitution {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "id", nullable = false)
-    private int id;
+    private Long id;
 
     @Column(name = "name", nullable = false)
     private String name;
@@ -27,11 +30,11 @@ public class CategoryOfInstitution {
     @Column(name = "institution_id", nullable = false)
     private int institutionId;
 
-    public int getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(Long id) {
         this.id = id;
     }
 

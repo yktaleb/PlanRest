@@ -6,14 +6,17 @@ import java.util.List;
 
 @Entity
 @Table(name = "profile", schema = "PlanRest")
-public class Profile {
+public class Profile extends Model{
 
     public Profile() {
+        super();
+    }
 
+    public Profile(Long id) {
+        super(id);
     }
 
     public Profile(String password, String email, String sex, String name, String surName) {
-        this.id = id;
         this.password = password;
         this.email = email;
         this.sex = sex;
@@ -21,8 +24,7 @@ public class Profile {
         this.surName = surName;
     }
 
-    public Profile(int id, String password, String email, String sex, String name, String surName, byte[] avatar, String status, Date dateOfBirth, String phoneNumber, String stateOfResidence, String relationshipStatus, String placeOfStudy, String favoritePlace, String linkVk, String aboutMyself) {
-        this.id = id;
+    public Profile(String password, String email, String sex, String name, String surName, byte[] avatar, String status, Date dateOfBirth, String phoneNumber, String stateOfResidence, String relationshipStatus, String placeOfStudy, String favoritePlace, String linkVk, String aboutMyself) {
         this.password = password;
         this.email = email;
         this.sex = sex;
@@ -43,7 +45,7 @@ public class Profile {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id", nullable = false)
-    private int id;
+    private Long id;
 
     @Column(name = "password", nullable = false)
     private String password;
@@ -99,11 +101,11 @@ public class Profile {
     @OneToOne(cascade = CascadeType.ALL, mappedBy = "friend")
     private Friend friend;
 
-    public int getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(Long id) {
         this.id = id;
     }
 

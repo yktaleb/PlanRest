@@ -5,14 +5,17 @@ import javax.persistence.*;
 
 @Entity
 @Table(name = "institution", schema = "PlanRest")
-public class Institution {
+public class Institution extends Model{
 
     public Institution() {
-
+        super();
     }
 
-    public Institution(int id, byte[] avatar, String name, String phoneNumber, String address, String linkInstitution, String workingHours, String kitchen, String services, String averageScore, String aboutInstitution) {
-        this.id = id;
+    public Institution(Long id) {
+        super(id);
+    }
+
+    public Institution(byte[] avatar, String name, String phoneNumber, String address, String linkInstitution, String workingHours, String kitchen, String services, String averageScore, String aboutInstitution) {
         this.avatar = avatar;
         this.name = name;
         this.phoneNumber = phoneNumber;
@@ -28,7 +31,7 @@ public class Institution {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "id", nullable = false)
-    private int id;
+    private Long id;
 
     @Column(name = "avatar")
     private byte[] avatar;
@@ -60,11 +63,11 @@ public class Institution {
     @Column(name = "about_institution")
     private String aboutInstitution;
 
-    public int getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(Long id) {
         this.id = id;
     }
 

@@ -4,14 +4,17 @@ import javax.persistence.*;
 
 @Entity
 @Table(name = "activity_history")
-public class ActivityHistory {
+public class ActivityHistory extends Model{
 
     public ActivityHistory() {
-
+        super();
     }
 
-    public ActivityHistory(int id, int institutionId, int profileId) {
-        this.id = id;
+    public ActivityHistory(Long id) {
+        super(id);
+    }
+
+    public ActivityHistory(int institutionId, int profileId) {
         this.institutionId = institutionId;
         this.profileId = profileId;
     }
@@ -19,7 +22,7 @@ public class ActivityHistory {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "id", nullable = false)
-    private int id;
+    private Long id;
 
     @Column(name = "Institution_id", nullable = false)
     private int institutionId;
@@ -27,11 +30,11 @@ public class ActivityHistory {
     @Column(name = "Profile_id", nullable = false)
     private int profileId;
 
-    public int getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(Long id) {
         this.id = id;
     }
 

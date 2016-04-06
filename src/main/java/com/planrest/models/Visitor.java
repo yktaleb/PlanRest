@@ -6,14 +6,17 @@ import java.util.Date;
 
 @Entity
 @Table(name = "visitor", schema = "PlanRest")
-public class Visitor {
+public class Visitor extends Model{
 
     public Visitor() {
-
+        super();
     }
 
-    public Visitor(int id, Date date, String time, int institutionId, int profileId) {
-        this.id = id;
+    public Visitor(Long id) {
+        super(id);
+    }
+
+    public Visitor(Date date, String time, int institutionId, int profileId) {
         this.date = date;
         this.time = time;
         this.institutionId = institutionId;
@@ -23,7 +26,7 @@ public class Visitor {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "id", nullable = false)
-    private int id;
+    private Long id;
 
     @Column(name = "date", nullable = false)
     @Temporal(TemporalType.DATE)
@@ -38,11 +41,11 @@ public class Visitor {
     @Column(name = "profile_id", nullable = false)
     private int profileId;
 
-    public int getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
