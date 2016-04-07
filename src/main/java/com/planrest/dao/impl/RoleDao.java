@@ -1,42 +1,13 @@
 package com.planrest.dao.impl;
 
-import com.planrest.dao.ItemDao;
+import com.planrest.dao.HibernatedDao;
 import com.planrest.models.Role;
-import org.hibernate.SessionFactory;
 
 import java.util.List;
 
-public class RoleDao implements ItemDao<Role> {
+public class RoleDao extends HibernatedDao<Role> {
 
-    private SessionFactory sessionFactory = getSessionFactory;
-
-    @Override
-    public List<Role> getAll() {
-        return null;
-    }
-
-    @Override
-    public Role getById(Long id) {
-        return null;
-    }
-
-    @Override
-    public void add(Role model) {
-
-    }
-
-    @Override
-    public void update(Role model) {
-
-    }
-
-    @Override
-    public void remove(Long id) {
-
-    }
-
-    @Override
-    public void remove(Role model) {
-
+    public List<Role> getAllRole() {
+        return getAll(Role.class);
     }
 }

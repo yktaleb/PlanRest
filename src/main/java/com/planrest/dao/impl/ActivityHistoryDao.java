@@ -1,42 +1,13 @@
 package com.planrest.dao.impl;
 
-import com.planrest.dao.ItemDao;
+import com.planrest.dao.HibernatedDao;
 import com.planrest.models.ActivityHistory;
-import org.hibernate.SessionFactory;
 
 import java.util.List;
 
-public class ActivityHistoryDao implements ItemDao<ActivityHistory>{
+public class ActivityHistoryDao extends HibernatedDao<ActivityHistory> {
 
-    private SessionFactory sessionFactory = getSessionFactory;
-
-    @Override
-    public List<ActivityHistory> getAll() {
-        return null;
-    }
-
-    @Override
-    public ActivityHistory getById(Long id) {
-        return null;
-    }
-
-    @Override
-    public void add(ActivityHistory model) {
-
-    }
-
-    @Override
-    public void update(ActivityHistory model) {
-
-    }
-
-    @Override
-    public void remove(Long id) {
-
-    }
-
-    @Override
-    public void remove(ActivityHistory model) {
-
+    public List<ActivityHistory> getAllActivityHistory() {
+        return getAll(ActivityHistory.class);
     }
 }

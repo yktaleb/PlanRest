@@ -1,0 +1,33 @@
+<?xml_mapping version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-configuration PUBLIC
+        "-//Hibernate/Hibernate Configuration DTD//EN"
+        "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+  <session-factory>
+    <property name="connection.driver_class">com.mysql.jdbc.Driver</property>
+    <property name="connection.url">jdbc:mysql://localhost:3306/PlanRest</property>
+    <property name="dialect">org.hibernate.dialect.MySQLDialect</property>
+    <property name="connection.username">root</property>
+    <property name="connection.password">root</property>
+    <property name="show_sql">true</property>
+    <property name="hbm2ddl.auto">create</property>
+
+    <!--<mapping resource="dao_configs/ActivityHistory.hbm.xml"/>-->
+    <!--<mapping resource="dao_configs/CategoryOfInstitution.hbm.xml"/>-->
+    <!--<mapping resource="dao_configs/Friend.hbm.xml"/>-->
+    <!--<mapping resource="dao_configs/Institution.hbm.xml"/>-->
+    <!--<mapping resource="dao_configs/PhotosInstitution.hbm.xml"/>-->
+    <!--<mapping resource="dao_configs/PhotosProfile.hbm.xml"/>-->
+    <!--<mapping resource="dao_configs/Profile.hbm.xml"/>-->
+    <!--<mapping resource="dao_configs/Visitor.hbm.xml"/>-->
+
+    <mapping class="com.planrest.models.ActivityHistory"/>
+    <mapping class="com.planrest.models.CategoryOfInstitution"/>
+    <mapping class="com.planrest.models.Friend"/>
+    <mapping class="com.planrest.models.Institution"/>
+    <mapping class="com.planrest.models.PhotosInstitution"/>
+    <mapping class="com.planrest.models.PhotosProfile"/>
+    <mapping class="com.planrest.models.Profile"/>
+    <mapping class="com.planrest.models.Visitor"/>
+  </session-factory>
+</hibernate-configuration>
