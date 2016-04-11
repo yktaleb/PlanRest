@@ -19,7 +19,7 @@
     <form name="form_login" action="j_spring_security_check" method="POST">
         <div id="authorization">
             <p class="loginAndPassword">Email</p>
-            <input type="Text" id="login" class="inputText" name="email"/>
+            <input type="Text" id="login" class="inputText" name="username"/>
             <p class="loginAndPassword">Password</p>
             <input type="Password" id="password" class="inputText" name="password"/>
             <br/> <br/>

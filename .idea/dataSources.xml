@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="DataSourceManagerImpl" format="xml" hash="911863651">
-    <data-source source="LOCAL" name="MySQL - PlanRest@localhost" uuid="2d745bd9-31e6-4040-a9b9-925837d826dc">
+  <component name="DataSourceManagerImpl" format="xml" hash="1204980565">
+    <data-source source="LOCAL" name="MySQL - PlanRest@localhost" uuid="8b02b9a4-1492-4933-b401-ff4fc83790cd">
       <driver-ref>mysql</driver-ref>
       <synchronize>true</synchronize>
       <jdbc-driver>com.mysql.jdbc.Driver</jdbc-driver>
