@@ -1,0 +1,15 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="PlanRest(MVC):war">
+    <output-path>$PROJECT_DIR$/target</output-path>
+    <root id="archive" name="app-1.0-SNAPSHOT.war">
+      <element id="artifact" artifact-name="PlanRest(MVC):war exploded" />
+      <element id="directory" name="WEB-INF">
+        <element id="directory" name="lib">
+          <element id="library" level="project" name="Spring-4.2.5.RELEASE" />
+          <element id="library" level="project" name="Spring Security-3.2.5" />
+          <element id="library" level="project" name="Spring MVC-4.2.5.RELEASE" />
+        </element>
+      </element>
+    </root>
+  </artifact>
+</component>
