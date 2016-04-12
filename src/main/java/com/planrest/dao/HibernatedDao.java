@@ -15,8 +15,8 @@ public abstract class HibernatedDao<T extends Model> implements AbstractDao<T> {
         HibernateUtil.buildIfNeeded();
     }
 
-    private Session session;
-    private Transaction transaction;
+    protected Session session;
+    protected Transaction transaction;
 
 
     @Override
@@ -45,17 +45,23 @@ public abstract class HibernatedDao<T extends Model> implements AbstractDao<T> {
         }
     }
 
+//    @Override
+//    public void remove(Class cl, Long id) {
+//        try {
+//            startOperation();
+//            session.delete(getById(cl, id));
+//            transaction.commit();
+//        } catch (Exception e) {
+//            e.printStackTrace();
+//        } finally {
+//            HibernateUtil.closeSession(session);
+//        }
+//    }
+
+
     @Override
     public void remove(Class cl, Long id) {
-        try {
-            startOperation();
-            session.delete(getById(cl, id));
-            transaction.commit();
-        } catch (Exception e) {
-            e.printStackTrace();
-        } finally {
-            HibernateUtil.closeSession(session);
-        }
+
     }
 
     @Override
@@ -87,24 +93,46 @@ public abstract class HibernatedDao<T extends Model> implements AbstractDao<T> {
         return objects;
     }
 
+//    @Override
+//    public T getById(Class cl, Long id) {
+//        T onject = null;
+//        try {
+//            startOperation();
+//            onject = (T) session.get(cl, id);
+//            transaction.commit();
+//        } catch (Exception e) {
+//            e.printStackTrace();
+//        } finally {
+//            HibernateUtil.closeSession(session);
+//        }
+//        return onject;
+//    }
+
+//    public abstract T getById(Long id);
+
     @Override
-    public T getById(Class cl, Long id) {
-        T onject = null;
-        try {
-            startOperation();
-            onject = (T) session.get(cl, id);
-            transaction.commit();
-        } catch (Exception e) {
-            e.printStackTrace();
-        } finally {
-            HibernateUtil.closeSession(session);
-        }
-        return onject;
+    public T getById(Long id) {
+        return null;
     }
 
-
-    private void startOperation() {
+    protected void startOperation() {
         session = HibernateUtil.openSession();
         transaction = session.beginTransaction();
+    }
+
+    public Session getSession() {
+        return session;
+    }
+
+    public void setSession(Session session) {
+        this.session = session;
+    }
+
+    public Transaction getTransaction() {
+        return transaction;
+    }
+
+    public void setTransaction(Transaction transaction) {
+        this.transaction = transaction;
     }
 }

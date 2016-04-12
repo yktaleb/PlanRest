@@ -8,7 +8,7 @@ public interface AbstractDao<T extends Model> {
 
     public List<T> getAll(Class cl);
 
-    public T getById(Class cl, Long id);
+    public T getById(Long id);
 
     public void add (T model);
 

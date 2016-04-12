@@ -1,9 +1,13 @@
 package com.planrest;
 
 import com.planrest.dao.impl.GroupDao;
+import com.planrest.dao.impl.GroupMembersDao;
 import com.planrest.dao.impl.ProfileDao;
+import com.planrest.dao.impl.UserDao;
 import com.planrest.models.Group;
+import com.planrest.models.GroupMembers;
 import com.planrest.models.Profile;
+import com.planrest.models.User;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.jdbc.JdbcDaoImpl;
 import org.springframework.security.provisioning.JdbcUserDetailsManager;
@@ -24,8 +28,18 @@ public class Main {
 //        profileDao.add(dima);
 //        profileDao.add(leha);
 
+//        ProfileDao userDao = new ProfileDao();
+//        Profile profileById = userDao.getProfileById(1L);
+//        System.out.println(profileById.getEmail());
+//
+//        UserDao userDao = new UserDao();
+//        userDao.add(new User("Yarik", "232", true));
+
+
+        GroupMembersDao groupMembersDao = new GroupMembersDao();
         GroupDao groupDao = new GroupDao();
-        groupDao.getById(Group.class, 1L);
+        GroupMembers groupMembers = new GroupMembers("Ivan", groupDao.getById(2L));
+        groupMembersDao.add(groupMembers);
 
     }
 }
