@@ -92,7 +92,7 @@ public abstract class HibernatedDao<T extends Model> implements AbstractDao<T> {
         T onject = null;
         try {
             startOperation();
-            onject = (T) session.load(cl, id);
+            onject = (T) session.get(cl, id);
             transaction.commit();
         } catch (Exception e) {
             e.printStackTrace();
@@ -101,6 +101,7 @@ public abstract class HibernatedDao<T extends Model> implements AbstractDao<T> {
         }
         return onject;
     }
+
 
     private void startOperation() {
         session = HibernateUtil.openSession();

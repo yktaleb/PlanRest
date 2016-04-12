@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <component name="dataSourceStorage">
-  <data-source name="MySQL - PlanRest@localhost" uuid="8b02b9a4-1492-4933-b401-ff4fc83790cd">
+  <data-source name="MySQL - PlanRest@localhost" uuid="c7555e8f-4b1f-49e8-bee1-13fa5d4e23c0">
     <database-info product="MySQL" version="5.7.11-log" jdbc-version="4.0" driver-name="MySQL Connector Java" driver-version="mysql-connector-java-5.1.35 ( Revision: 5fb9c5849535c13917c2cf9baaece6ef9693ef27 )">
       <extra-name-characters>#@</extra-name-characters>
       <identifier-quote-string>`</identifier-quote-string>
@@ -9,85 +9,76 @@
     <database-model serializer="dbm" rdbms="MYSQL" format-version="2.5">
       <schema id="1" name="planrest"/>
       <table id="2" parent="1" name="activity_history"/>
-      <table id="3" parent="1" name="authorities"/>
-      <table id="4" parent="1" name="category_of_institution"/>
-      <table id="5" parent="1" name="friend"/>
-      <table id="6" parent="1" name="institution"/>
-      <table id="7" parent="1" name="photos_institution"/>
-      <table id="8" parent="1" name="photos_profile"/>
-      <table id="9" parent="1" name="profile"/>
-      <table id="10" parent="1" name="users"/>
-      <table id="11" parent="1" name="visitor"/>
-      <column id="12" parent="2" name="id">
+      <table id="3" parent="1" name="category_of_institution"/>
+      <table id="4" parent="1" name="friend"/>
+      <table id="5" parent="1" name="group_authorities"/>
+      <table id="6" parent="1" name="group_members"/>
+      <table id="7" parent="1" name="groups"/>
+      <table id="8" parent="1" name="institution"/>
+      <table id="9" parent="1" name="photos_institution"/>
+      <table id="10" parent="1" name="photos_profile"/>
+      <table id="11" parent="1" name="profile"/>
+      <table id="12" parent="1" name="users"/>
+      <table id="13" parent="1" name="visitor"/>
+      <column id="14" parent="2" name="id">
         <mandatory>1</mandatory>
         <data-type>int(11)</data-type>
       </column>
-      <column id="13" parent="2" name="Institution_id">
+      <column id="15" parent="2" name="Institution_id">
         <mandatory>1</mandatory>
         <data-type>int(11)</data-type>
       </column>
-      <column id="14" parent="2" name="Profile_id">
+      <column id="16" parent="2" name="Profile_id">
         <mandatory>1</mandatory>
         <data-type>int(11)</data-type>
       </column>
-      <index id="15" parent="2" name="fk_Activity_history_Institution1_idx">
+      <index id="17" parent="2" name="fk_Activity_history_Institution1_idx">
         <columns>Institution_id</columns>
         <desc-columns></desc-columns>
       </index>
-      <index id="16" parent="2" name="fk_Activity_history_Profile1_idx">
+      <index id="18" parent="2" name="fk_Activity_history_Profile1_idx">
         <columns>Profile_id</columns>
         <desc-columns></desc-columns>
       </index>
-      <key id="17" parent="2" name="PRIMARY">
+      <key id="19" parent="2" name="PRIMARY">
         <columns>id</columns>
         <primary>1</primary>
       </key>
-      <foreign-key id="18" parent="2" name="fk_Activity_history_Institution1">
+      <foreign-key id="20" parent="2" name="fk_Activity_history_Institution1">
         <columns>Institution_id</columns>
         <ref-key>~.institution.PRIMARY</ref-key>
         <cascade-update-rule>restrict</cascade-update-rule>
         <cascade-delete-rule>restrict</cascade-delete-rule>
       </foreign-key>
-      <foreign-key id="19" parent="2" name="fk_Activity_history_Profile1">
+      <foreign-key id="21" parent="2" name="fk_Activity_history_Profile1">
         <columns>Profile_id</columns>
         <ref-key>~.profile.PRIMARY</ref-key>
         <cascade-update-rule>restrict</cascade-update-rule>
         <cascade-delete-rule>restrict</cascade-delete-rule>
       </foreign-key>
-      <column id="20" parent="3" name="id">
+      <column id="22" parent="3" name="id">
         <mandatory>1</mandatory>
         <data-type>int(11)</data-type>
       </column>
-      <column id="21" parent="3" name="username">
+      <column id="23" parent="3" name="name">
         <mandatory>1</mandatory>
-        <data-type>varchar(50)</data-type>
+        <data-type>varchar(100)</data-type>
       </column>
-      <column id="22" parent="3" name="authority">
+      <column id="24" parent="3" name="Institution_id">
         <mandatory>1</mandatory>
-        <data-type>varchar(50)</data-type>
+        <data-type>int(11)</data-type>
       </column>
-      <index id="23" parent="3" name="fk_username_idx">
-        <columns>username</columns>
+      <index id="25" parent="3" name="fk_Category_of_institution_Institution1_idx">
+        <columns>Institution_id</columns>
         <desc-columns></desc-columns>
       </index>
-      <index id="24" parent="3" name="uni_username_role">
-        <columns>authority
-username</columns>
-        <desc-columns></desc-columns>
-        <unique>1</unique>
-      </index>
-      <key id="25" parent="3" name="PRIMARY">
+      <key id="26" parent="3" name="PRIMARY">
         <columns>id</columns>
         <primary>1</primary>
       </key>
-      <key id="26" parent="3" name="uni_username_role">
-        <columns>authority
-username</columns>
-        <underlying-index>uni_username_role</underlying-index>
-      </key>
-      <foreign-key id="27" parent="3" name="fk_username">
-        <columns>username</columns>
-        <ref-key>~.users.PRIMARY</ref-key>
+      <foreign-key id="27" parent="3" name="fk_Category_of_institution_Institution1">
+        <columns>Institution_id</columns>
+        <ref-key>~.institution.PRIMARY</ref-key>
         <cascade-update-rule>restrict</cascade-update-rule>
         <cascade-delete-rule>restrict</cascade-delete-rule>
       </foreign-key>
@@ -95,271 +86,301 @@ username</columns>
         <mandatory>1</mandatory>
         <data-type>int(11)</data-type>
       </column>
-      <column id="29" parent="4" name="name">
-        <mandatory>1</mandatory>
-        <data-type>varchar(100)</data-type>
-      </column>
-      <column id="30" parent="4" name="Institution_id">
+      <column id="29" parent="4" name="id_friend">
         <mandatory>1</mandatory>
         <data-type>int(11)</data-type>
       </column>
-      <index id="31" parent="4" name="fk_Category_of_institution_Institution1_idx">
-        <columns>Institution_id</columns>
-        <desc-columns></desc-columns>
-      </index>
-      <key id="32" parent="4" name="PRIMARY">
-        <columns>id</columns>
-        <primary>1</primary>
-      </key>
-      <foreign-key id="33" parent="4" name="fk_Category_of_institution_Institution1">
-        <columns>Institution_id</columns>
-        <ref-key>~.institution.PRIMARY</ref-key>
-        <cascade-update-rule>restrict</cascade-update-rule>
-        <cascade-delete-rule>restrict</cascade-delete-rule>
-      </foreign-key>
-      <column id="34" parent="5" name="id">
+      <column id="30" parent="4" name="Profile_id">
         <mandatory>1</mandatory>
         <data-type>int(11)</data-type>
       </column>
-      <column id="35" parent="5" name="id_friend">
-        <mandatory>1</mandatory>
-        <data-type>int(11)</data-type>
-      </column>
-      <column id="36" parent="5" name="Profile_id">
-        <mandatory>1</mandatory>
-        <data-type>int(11)</data-type>
-      </column>
-      <index id="37" parent="5" name="fk_Friend_Profile1_idx">
+      <index id="31" parent="4" name="fk_Friend_Profile1_idx">
         <columns>id_friend</columns>
         <desc-columns></desc-columns>
       </index>
-      <index id="38" parent="5" name="fk_Friend_Profile2">
+      <index id="32" parent="4" name="fk_Friend_Profile2">
         <columns>Profile_id</columns>
         <desc-columns></desc-columns>
       </index>
-      <key id="39" parent="5" name="PRIMARY">
+      <key id="33" parent="4" name="PRIMARY">
         <columns>id</columns>
         <primary>1</primary>
       </key>
-      <foreign-key id="40" parent="5" name="fk_Friend_Profile1">
+      <foreign-key id="34" parent="4" name="fk_Friend_Profile1">
         <columns>id_friend</columns>
         <ref-key>~.profile.PRIMARY</ref-key>
         <cascade-update-rule>restrict</cascade-update-rule>
         <cascade-delete-rule>restrict</cascade-delete-rule>
       </foreign-key>
-      <foreign-key id="41" parent="5" name="fk_Friend_Profile2">
+      <foreign-key id="35" parent="4" name="fk_Friend_Profile2">
         <columns>Profile_id</columns>
         <ref-key>~.profile.PRIMARY</ref-key>
         <cascade-update-rule>restrict</cascade-update-rule>
         <cascade-delete-rule>restrict</cascade-delete-rule>
       </foreign-key>
-      <column id="42" parent="6" name="id">
+      <column id="36" parent="5" name="group_id">
+        <mandatory>1</mandatory>
+        <data-type>bigint(20) unsigned</data-type>
+      </column>
+      <column id="37" parent="5" name="authority">
+        <mandatory>1</mandatory>
+        <data-type>varchar(50)</data-type>
+      </column>
+      <index id="38" parent="5" name="group_id">
+        <columns>group_id</columns>
+        <desc-columns></desc-columns>
+      </index>
+      <foreign-key id="39" parent="5" name="group_authorities_ibfk_1">
+        <columns>group_id</columns>
+        <ref-key>~.groups.PRIMARY</ref-key>
+        <cascade-update-rule>restrict</cascade-update-rule>
+        <cascade-delete-rule>restrict</cascade-delete-rule>
+      </foreign-key>
+      <column id="40" parent="6" name="id">
+        <mandatory>1</mandatory>
+        <data-type>bigint(20) unsigned</data-type>
+      </column>
+      <column id="41" parent="6" name="username">
+        <mandatory>1</mandatory>
+        <data-type>varchar(50)</data-type>
+      </column>
+      <column id="42" parent="6" name="group_id">
+        <mandatory>1</mandatory>
+        <data-type>bigint(20) unsigned</data-type>
+      </column>
+      <index id="43" parent="6" name="group_id">
+        <columns>group_id</columns>
+        <desc-columns></desc-columns>
+      </index>
+      <key id="44" parent="6" name="PRIMARY">
+        <columns>id</columns>
+        <primary>1</primary>
+      </key>
+      <foreign-key id="45" parent="6" name="group_members_ibfk_1">
+        <columns>group_id</columns>
+        <ref-key>~.groups.PRIMARY</ref-key>
+        <cascade-update-rule>restrict</cascade-update-rule>
+        <cascade-delete-rule>restrict</cascade-delete-rule>
+      </foreign-key>
+      <column id="46" parent="7" name="id">
+        <mandatory>1</mandatory>
+        <data-type>bigint(20) unsigned</data-type>
+      </column>
+      <column id="47" parent="7" name="group_name">
+        <mandatory>1</mandatory>
+        <data-type>varchar(50)</data-type>
+      </column>
+      <key id="48" parent="7" name="PRIMARY">
+        <columns>id</columns>
+        <primary>1</primary>
+      </key>
+      <column id="49" parent="8" name="id">
         <mandatory>1</mandatory>
         <data-type>int(11)</data-type>
       </column>
-      <column id="43" parent="6" name="avatar">
+      <column id="50" parent="8" name="avatar">
         <data-type>mediumblob</data-type>
       </column>
-      <column id="44" parent="6" name="name">
+      <column id="51" parent="8" name="name">
         <mandatory>1</mandatory>
         <data-type>varchar(45)</data-type>
       </column>
-      <column id="45" parent="6" name="phone_number">
+      <column id="52" parent="8" name="phone_number">
         <mandatory>1</mandatory>
         <data-type>text</data-type>
       </column>
-      <column id="46" parent="6" name="address">
+      <column id="53" parent="8" name="address">
         <mandatory>1</mandatory>
         <data-type>varchar(100)</data-type>
       </column>
-      <column id="47" parent="6" name="link_institution">
+      <column id="54" parent="8" name="link_institution">
         <data-type>varchar(255)</data-type>
       </column>
-      <column id="48" parent="6" name="working_hours">
+      <column id="55" parent="8" name="working_hours">
         <data-type>mediumtext</data-type>
       </column>
-      <column id="49" parent="6" name="kitchen">
+      <column id="56" parent="8" name="kitchen">
         <data-type>mediumtext</data-type>
       </column>
-      <column id="50" parent="6" name="services">
+      <column id="57" parent="8" name="services">
         <data-type>mediumtext</data-type>
       </column>
-      <column id="51" parent="6" name="average_score">
+      <column id="58" parent="8" name="average_score">
         <data-type>varchar(45)</data-type>
       </column>
-      <column id="52" parent="6" name="about_institution">
+      <column id="59" parent="8" name="about_institution">
         <data-type>mediumtext</data-type>
       </column>
-      <key id="53" parent="6" name="PRIMARY">
+      <key id="60" parent="8" name="PRIMARY">
         <columns>id</columns>
         <primary>1</primary>
       </key>
-      <column id="54" parent="7" name="Institution_id">
+      <column id="61" parent="9" name="Institution_id">
         <mandatory>1</mandatory>
         <data-type>int(11)</data-type>
       </column>
-      <column id="55" parent="7" name="photo">
+      <column id="62" parent="9" name="photo">
         <mandatory>1</mandatory>
         <data-type>mediumblob</data-type>
       </column>
-      <column id="56" parent="7" name="id">
+      <column id="63" parent="9" name="id">
         <mandatory>1</mandatory>
         <data-type>int(11)</data-type>
       </column>
-      <index id="57" parent="7" name="fk_Photos_institution_institution1_idx">
+      <index id="64" parent="9" name="fk_Photos_institution_institution1_idx">
         <columns>Institution_id</columns>
         <desc-columns></desc-columns>
       </index>
-      <key id="58" parent="7" name="PRIMARY">
+      <key id="65" parent="9" name="PRIMARY">
         <columns>id</columns>
         <primary>1</primary>
       </key>
-      <foreign-key id="59" parent="7" name="fk_Photos_institution_institution1">
+      <foreign-key id="66" parent="9" name="fk_Photos_institution_institution1">
         <columns>Institution_id</columns>
         <ref-key>~.institution.PRIMARY</ref-key>
         <cascade-update-rule>restrict</cascade-update-rule>
         <cascade-delete-rule>restrict</cascade-delete-rule>
       </foreign-key>
-      <column id="60" parent="8" name="id">
+      <column id="67" parent="10" name="id">
         <mandatory>1</mandatory>
         <data-type>int(11)</data-type>
       </column>
-      <column id="61" parent="8" name="Profile_id">
+      <column id="68" parent="10" name="Profile_id">
         <mandatory>1</mandatory>
         <data-type>int(11)</data-type>
       </column>
-      <column id="62" parent="8" name="photo">
+      <column id="69" parent="10" name="photo">
         <mandatory>1</mandatory>
         <data-type>mediumblob</data-type>
       </column>
-      <index id="63" parent="8" name="fk_Photos_Profile1">
+      <index id="70" parent="10" name="fk_Photos_Profile1">
         <columns>Profile_id</columns>
         <desc-columns></desc-columns>
       </index>
-      <key id="64" parent="8" name="PRIMARY">
+      <key id="71" parent="10" name="PRIMARY">
         <columns>id</columns>
         <primary>1</primary>
       </key>
-      <foreign-key id="65" parent="8" name="fk_Photos_Profile1">
+      <foreign-key id="72" parent="10" name="fk_Photos_Profile1">
         <columns>Profile_id</columns>
         <ref-key>~.profile.PRIMARY</ref-key>
         <cascade-update-rule>restrict</cascade-update-rule>
         <cascade-delete-rule>restrict</cascade-delete-rule>
       </foreign-key>
-      <column id="66" parent="9" name="id">
+      <column id="73" parent="11" name="id">
         <mandatory>1</mandatory>
         <data-type>int(11)</data-type>
       </column>
-      <column id="67" parent="9" name="password">
+      <column id="74" parent="11" name="password">
         <mandatory>1</mandatory>
         <data-type>varchar(45)</data-type>
       </column>
-      <column id="68" parent="9" name="email">
+      <column id="75" parent="11" name="email">
         <mandatory>1</mandatory>
         <data-type>varchar(256)</data-type>
       </column>
-      <column id="69" parent="9" name="sex">
+      <column id="76" parent="11" name="sex">
         <mandatory>1</mandatory>
         <data-type>varchar(10)</data-type>
       </column>
-      <column id="70" parent="9" name="name">
+      <column id="77" parent="11" name="name">
         <mandatory>1</mandatory>
         <data-type>varchar(45)</data-type>
       </column>
-      <column id="71" parent="9" name="sur_name">
+      <column id="78" parent="11" name="sur_name">
         <mandatory>1</mandatory>
         <data-type>varchar(45)</data-type>
       </column>
-      <column id="72" parent="9" name="avatar">
+      <column id="79" parent="11" name="avatar">
         <data-type>mediumblob</data-type>
       </column>
-      <column id="73" parent="9" name="status">
+      <column id="80" parent="11" name="status">
         <data-type>varchar(45)</data-type>
       </column>
-      <column id="74" parent="9" name="date_of_birth">
+      <column id="81" parent="11" name="date_of_birth">
         <data-type>date</data-type>
       </column>
-      <column id="75" parent="9" name="phone_number">
+      <column id="82" parent="11" name="phone_number">
         <data-type>varchar(45)</data-type>
       </column>
-      <column id="76" parent="9" name="state_of_residence">
+      <column id="83" parent="11" name="state_of_residence">
         <data-type>varchar(45)</data-type>
       </column>
-      <column id="77" parent="9" name="relationship_status">
+      <column id="84" parent="11" name="relationship_status">
         <data-type>varchar(45)</data-type>
       </column>
-      <column id="78" parent="9" name="place_of_study">
+      <column id="85" parent="11" name="place_of_study">
         <data-type>varchar(45)</data-type>
       </column>
-      <column id="79" parent="9" name="favorite_place">
+      <column id="86" parent="11" name="favorite_place">
         <data-type>varchar(45)</data-type>
       </column>
-      <column id="80" parent="9" name="link_vk">
+      <column id="87" parent="11" name="link_vk">
         <data-type>varchar(60)</data-type>
       </column>
-      <column id="81" parent="9" name="about_myself">
+      <column id="88" parent="11" name="about_myself">
         <data-type>mediumtext</data-type>
       </column>
-      <key id="82" parent="9" name="PRIMARY">
+      <key id="89" parent="11" name="PRIMARY">
         <columns>id</columns>
         <primary>1</primary>
       </key>
-      <column id="83" parent="10" name="username">
+      <column id="90" parent="12" name="username">
         <mandatory>1</mandatory>
         <data-type>varchar(45)</data-type>
       </column>
-      <column id="84" parent="10" name="password">
+      <column id="91" parent="12" name="password">
         <mandatory>1</mandatory>
         <data-type>varchar(45)</data-type>
       </column>
-      <column id="85" parent="10" name="enabled">
+      <column id="92" parent="12" name="enabled">
         <mandatory>1</mandatory>
         <data-type>tinyint(4)</data-type>
         <default-expression>&apos;1&apos;</default-expression>
       </column>
-      <key id="86" parent="10" name="PRIMARY">
+      <key id="93" parent="12" name="PRIMARY">
         <columns>username</columns>
         <primary>1</primary>
       </key>
-      <column id="87" parent="11" name="id">
+      <column id="94" parent="13" name="id">
         <mandatory>1</mandatory>
         <data-type>int(11)</data-type>
       </column>
-      <column id="88" parent="11" name="date">
+      <column id="95" parent="13" name="date">
         <mandatory>1</mandatory>
         <data-type>date</data-type>
       </column>
-      <column id="89" parent="11" name="time">
+      <column id="96" parent="13" name="time">
         <mandatory>1</mandatory>
         <data-type>time(6)</data-type>
       </column>
-      <column id="90" parent="11" name="Institution_id">
+      <column id="97" parent="13" name="Institution_id">
         <mandatory>1</mandatory>
         <data-type>int(11)</data-type>
       </column>
-      <column id="91" parent="11" name="Profile_id">
+      <column id="98" parent="13" name="Profile_id">
         <mandatory>1</mandatory>
         <data-type>int(11)</data-type>
       </column>
-      <index id="92" parent="11" name="fk_participant_Institution1_idx">
+      <index id="99" parent="13" name="fk_participant_Institution1_idx">
         <columns>Institution_id</columns>
         <desc-columns></desc-columns>
       </index>
-      <index id="93" parent="11" name="fk_Visitor_Profile1_idx">
+      <index id="100" parent="13" name="fk_Visitor_Profile1_idx">
         <columns>Profile_id</columns>
         <desc-columns></desc-columns>
       </index>
-      <key id="94" parent="11" name="PRIMARY">
+      <key id="101" parent="13" name="PRIMARY">
         <columns>id</columns>
         <primary>1</primary>
       </key>
-      <foreign-key id="95" parent="11" name="fk_participant_Institution1">
+      <foreign-key id="102" parent="13" name="fk_participant_Institution1">
         <columns>Institution_id</columns>
         <ref-key>~.institution.PRIMARY</ref-key>
         <cascade-update-rule>restrict</cascade-update-rule>
         <cascade-delete-rule>restrict</cascade-delete-rule>
       </foreign-key>
-      <foreign-key id="96" parent="11" name="fk_Visitor_Profile1">
+      <foreign-key id="103" parent="13" name="fk_Visitor_Profile1">
         <columns>Profile_id</columns>
         <ref-key>~.profile.PRIMARY</ref-key>
         <cascade-update-rule>restrict</cascade-update-rule>

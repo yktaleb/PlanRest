@@ -10,7 +10,7 @@
     <property name="connection.username">root</property>
     <property name="connection.password">root</property>
     <property name="show_sql">true</property>
-    <property name="hbm2ddl.auto">create</property>
+    <property name="hbm2ddl.auto">update</property>
 
     <!--<mapping resource="dao_configs/ActivityHistory.hbm.xml"/>-->
     <!--<mapping resource="dao_configs/CategoryOfInstitution.hbm.xml"/>-->
@@ -29,5 +29,10 @@
     <mapping class="com.planrest.models.PhotosProfile"/>
     <mapping class="com.planrest.models.Profile"/>
     <mapping class="com.planrest.models.Visitor"/>
+
+    <mapping class="com.planrest.models.User"/>
+    <mapping class="com.planrest.models.Group"/>
+    <mapping class="com.planrest.models.GroupMembers"/>
+    <mapping class="com.planrest.models.GroupAuthorities"/>
   </session-factory>
 </hibernate-configuration>

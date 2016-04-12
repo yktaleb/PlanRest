@@ -25,8 +25,8 @@
             <p class="loginAndPassword">Repeat password</p>
             <input type="Password" class="inputText">
             <p id="loginAndPassword">Choose please sex</p>
-            <label for="man" class="radio">man:</label> <input type="radio" id="man"/>
-            <label for="woman" class="radio">woman:</label> <input type="radio" id="woman"/>
+            <form:radiobutton path="sex" class="radio" value="man" label="man" />
+            <form:radiobutton path="sex" class="radio" value="woman" label="woman" />
             <br> <br>
             <center><input type="submit" value="Registration" class="btnLog"></center>
         </div>
