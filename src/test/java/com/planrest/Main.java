@@ -36,10 +36,17 @@ public class Main {
 //        userDao.add(new User("Yarik", "232", true));
 
 
-        GroupMembersDao groupMembersDao = new GroupMembersDao();
-        GroupDao groupDao = new GroupDao();
-        GroupMembers groupMembers = new GroupMembers("Ivan", groupDao.getById(2L));
-        groupMembersDao.add(groupMembers);
+//        GroupMembersDao groupMembersDao = new GroupMembersDao();
+//        GroupDao groupDao = new GroupDao();
+//        GroupMembers groupMembers = new GroupMembers("Ivan", groupDao.getById(2L));
+//        groupMembersDao.add(groupMembers);
+
+//        ProfileDao profileDao = new ProfileDao();
+//        if (profileDao.isThere("yarik.taleb@gmail.com")){
+//            System.out.println("There");
+//        } else {
+//            System.out.println("NO");
+//        }
 
     }
 }

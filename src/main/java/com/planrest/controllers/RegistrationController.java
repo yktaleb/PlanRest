@@ -25,7 +25,14 @@ public class RegistrationController {
     }
 
     @RequestMapping(value="/check_user")
-    public ModelAndView checkUser(@ModelAttribute Profile profile) {
+    public String checkUser(@ModelAttribute Profile profile) {
+
+        ProfileDao profileDao = new ProfileDao();
+        if (profileDao.isThere(profile.getEmail())){
+            return "registration";
+        }
+
+
 
         User user = new User(profile.getEmail(), profile.getPassword(), true);
         UserDao userDao = new UserDao();
@@ -36,13 +43,12 @@ public class RegistrationController {
         GroupMembersDao groupMembersDao = new GroupMembersDao();
         groupMembersDao.add(groupMembers);
 
-        ProfileDao profileDao = new ProfileDao();
         profileDao.add(profile);
 
-        ModelAndView modelAndView = new ModelAndView();
-        modelAndView.setViewName("check_user");
-        modelAndView.addObject("prof", profile);
+//        ModelAndView modelAndView = new ModelAndView();
+//        modelAndView.setViewName("check_user");
+//        modelAndView.addObject("prof", profile);
 
-        return modelAndView;
+        return "check_user";
     }
 }

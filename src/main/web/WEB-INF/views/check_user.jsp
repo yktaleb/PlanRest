@@ -5,10 +5,10 @@
     <title>Title</title>
 </head>
 <body>
-<p>${prof.id}</p>
-<p>${prof.name}</p>
-<p>${prof.surName}</p>
-<p>${prof.password}</p>
-<p>${prof.sex}</p>
+<%--<p>${prof.id}</p>--%>
+<%--<p>${prof.name}</p>--%>
+<%--<p>${prof.surName}</p>--%>
+<%--<p>${prof.password}</p>--%>
+<%--<p>${prof.sex}</p>--%>
 </body>
 </html>

@@ -1,3 +1,4 @@
+<%@ page import="com.planrest.dao.impl.ProfileDao" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
@@ -27,8 +28,16 @@
             <p id="loginAndPassword">Choose please sex</p>
             <form:radiobutton path="sex" class="radio" value="man" label="man" />
             <form:radiobutton path="sex" class="radio" value="woman" label="woman" />
-            <br> <br>
+            <br>
+            <br>
             <center><input type="submit" value="Registration" class="btnLog"></center>
+            <%
+                if (ProfileDao.isThere()){
+            %>
+                    <center><p style="color: #a3000b;">This e-mail address already exists</p></center>
+            <%
+                }
+            %>
         </div>
 
     </form:form>

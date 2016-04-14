@@ -29,6 +29,10 @@
             <br/>
             <a href="#" id="help">Forgot password?</a>
             <a href="registration" id="registration">Sign up now!</a>
+            <br/>
+            <c:if test="${not empty SPRING_SECURITY_LAST_EXCEPTION}">
+                <p style="color: #c9000b;">Invalid email or password</p>
+            </c:if>
         </div>
 
     </form>

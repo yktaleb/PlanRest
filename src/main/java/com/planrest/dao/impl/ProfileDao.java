@@ -9,6 +9,8 @@ import java.util.List;
 
 public class ProfileDao extends HibernatedDao<Profile> {
 
+    private static boolean isThere = false;
+
     public List<Profile> getAllProfile() {
         return getAll(Profile.class);
     }
@@ -28,4 +30,29 @@ public class ProfileDao extends HibernatedDao<Profile> {
         return user;
     }
 
+    public boolean isThere(String email) {
+        boolean check = false;
+        try {
+            startOperation();
+            List result = session.createSQLQuery("SELECT name FROM profile WHERE email = '" + email + "'").list();
+            if (result.size() != 0) {
+                check = true;
+                isThere = true;
+            }
+            transaction.commit();
+        } catch (Exception e) {
+            e.printStackTrace();
+        } finally {
+            HibernateUtil.closeSession(getSession());
+        }
+        return check;
+    }
+
+    public static boolean isThere() {
+        return isThere;
+    }
+
+    public static void setThere(boolean there) {
+        isThere = there;
+    }
 }
