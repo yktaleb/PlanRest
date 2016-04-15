@@ -18,4 +18,9 @@ public class HomeController {
         return "home";
     }
 
+    @RequestMapping(value = "/forgot_password", method = RequestMethod.GET)
+    public String changePassword() {
+        return "forgot_password";
+    }
+
 }

@@ -23,15 +23,16 @@
             <p class="loginAndPassword">Password</p>
             <input type="Password" id="password" class="inputText" name="password"/>
             <br/> <br/>
-            <input type="submit" value="Login" id="btnLog" >
+            <input type="submit" value="Login" class="btnLog" >
             <br/>
             <input type="checkbox" name="_spring_security_remember_me">Remember me</input>
             <br/>
-            <a href="#" id="help">Forgot password?</a>
-            <a href="registration" id="registration">Sign up now!</a>
+            <br/>
+            <a href="forgot_password" id="help" class="help">Forgot password?</a>
+            <a href="registration" id="registration" class="registration">Sign up now!</a>
             <br/>
             <c:if test="${not empty SPRING_SECURITY_LAST_EXCEPTION}">
-                <p style="color: #c9000b;">Invalid email or password</p>
+                <center><p class="error">Invalid email or password</p></center>
             </c:if>
         </div>
 
