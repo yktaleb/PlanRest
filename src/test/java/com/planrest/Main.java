@@ -48,5 +48,7 @@ public class Main {
 //            System.out.println("NO");
 //        }
 
+        ProfileDao profileDao = new ProfileDao();
+        profileDao.changePassword("4321", "dimas@gmail.com");
     }
 }

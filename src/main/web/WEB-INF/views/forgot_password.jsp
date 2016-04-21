@@ -9,7 +9,7 @@
 </head>
 <body>
 
-    <form name="forgot_password" method="POST">
+    <form name="forgot_password" method="POST" action="change_password">
         <div id="authorization">
             <p class="loginAndPassword">Email</p>
             <input type="Text" id="login" class="inputText" name="username"/>

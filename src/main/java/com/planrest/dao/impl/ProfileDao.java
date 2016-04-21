@@ -4,6 +4,9 @@ import com.planrest.dao.HibernateUtil;
 import com.planrest.dao.HibernatedDao;
 import com.planrest.models.Profile;
 import com.planrest.models.User;
+import org.hibernate.mapping.Column;
+import org.hibernate.mapping.Table;
+
 
 import java.util.List;
 
@@ -46,6 +49,11 @@ public class ProfileDao extends HibernatedDao<Profile> {
             HibernateUtil.closeSession(getSession());
         }
         return check;
+    }
+
+    public void changePassword(String password, String username) {
+        updateValue(new Table("profile"), new Column("password"), password, "email", username);
+//        updateValue(new Table("users"), new Column("password"), password, "username", username);
     }
 
     public static boolean isThere() {

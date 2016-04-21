@@ -23,6 +23,7 @@
       <column id="14" parent="2" name="id">
         <mandatory>1</mandatory>
         <data-type>bigint(20)</data-type>
+        <sequence-identity>1</sequence-identity>
       </column>
       <column id="15" parent="2" name="Institution_id">
         <mandatory>1</mandatory>
@@ -39,6 +40,7 @@
       <column id="18" parent="3" name="id">
         <mandatory>1</mandatory>
         <data-type>bigint(20)</data-type>
+        <sequence-identity>1</sequence-identity>
       </column>
       <column id="19" parent="3" name="institution_id">
         <mandatory>1</mandatory>
@@ -55,6 +57,7 @@
       <column id="22" parent="4" name="id">
         <mandatory>1</mandatory>
         <data-type>bigint(20)</data-type>
+        <sequence-identity>1</sequence-identity>
       </column>
       <column id="23" parent="4" name="id_friend">
         <mandatory>1</mandatory>
@@ -112,6 +115,7 @@
       <column id="35" parent="6" name="id">
         <mandatory>1</mandatory>
         <data-type>bigint(20)</data-type>
+        <sequence-identity>1</sequence-identity>
       </column>
       <column id="36" parent="6" name="username">
         <mandatory>1</mandatory>
@@ -138,6 +142,7 @@
       <column id="41" parent="7" name="id">
         <mandatory>1</mandatory>
         <data-type>bigint(20)</data-type>
+        <sequence-identity>1</sequence-identity>
       </column>
       <column id="42" parent="7" name="group_name">
         <mandatory>1</mandatory>
@@ -150,6 +155,7 @@
       <column id="44" parent="8" name="id">
         <mandatory>1</mandatory>
         <data-type>bigint(20)</data-type>
+        <sequence-identity>1</sequence-identity>
       </column>
       <column id="45" parent="8" name="about_institution">
         <data-type>varchar(255)</data-type>
@@ -190,6 +196,7 @@
       <column id="56" parent="9" name="id">
         <mandatory>1</mandatory>
         <data-type>bigint(20)</data-type>
+        <sequence-identity>1</sequence-identity>
       </column>
       <column id="57" parent="9" name="institution_id">
         <mandatory>1</mandatory>
@@ -206,6 +213,7 @@
       <column id="60" parent="10" name="id">
         <mandatory>1</mandatory>
         <data-type>bigint(20)</data-type>
+        <sequence-identity>1</sequence-identity>
       </column>
       <column id="61" parent="10" name="photo">
         <mandatory>1</mandatory>
@@ -232,6 +240,7 @@
       <column id="66" parent="11" name="id">
         <mandatory>1</mandatory>
         <data-type>bigint(20)</data-type>
+        <sequence-identity>1</sequence-identity>
       </column>
       <column id="67" parent="11" name="about_myself">
         <data-type>varchar(255)</data-type>
@@ -306,6 +315,7 @@
       <column id="87" parent="13" name="id">
         <mandatory>1</mandatory>
         <data-type>bigint(20)</data-type>
+        <sequence-identity>1</sequence-identity>
       </column>
       <column id="88" parent="13" name="date">
         <mandatory>1</mandatory>

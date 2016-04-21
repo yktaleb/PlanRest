@@ -4,18 +4,18 @@ html {
     font-family: sans-serif;
 }
 
-.btnLog {
+#btnLog {
     display: inline-block;
     color: #59818f;
     font-weight: 900;
     padding: .5em 2em;
     border: 2px solid;
     border-radius: 5px;
-    float: none;
     padding-left: 111px;
     padding-right: 111px;
     margin-bottom: 5px;
 }
+
 
 a:link {
     text-decoration: none;
@@ -37,10 +37,20 @@ a:hover {
     color: #000000;
 }
 
+#help{
+    float: right;
+    padding-right: 17px;
+}
+
+#registration{
+    float: right;
+    padding-right: 15px;
+}
+
 #authorization {
     /*Выравнивание блока по центру 10-18*/
     width: 270px;
-    height: 320px;
+    height: 335px;
     position: absolute;
     top: 0;
     right: 0;
@@ -69,15 +79,5 @@ a:hover {
 
 .error{
     color: #B22222;
-    padding-left: 5px;
-}
-
-.help{
-    float: right;
-    padding-right: 17px;
-}
-
-.registration{
-    float: right;
-    padding-right: 15px;
+    text-align: center;
 }
