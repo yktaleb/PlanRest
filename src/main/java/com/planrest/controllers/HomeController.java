@@ -1,5 +1,6 @@
 package com.planrest.controllers;
 
+import com.planrest.dao.impl.ProfileDao;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -22,14 +23,24 @@ public class HomeController {
 
     @RequestMapping(value = "/forgot_password", method = RequestMethod.GET)
     public String forgotPassword() {
-        System.out.println("HEijeovdmwrvsfsvfd");
+        ProfileDao.setIsThere(true);
         return "forgot_password";
     }
 
 
     @RequestMapping(value = "/change_password", method = RequestMethod.POST)
     public String changePassword(HttpServletRequest request) {
-        System.out.println(request.getParameter("username"));
+        String username = request.getParameter("username");
+        String password = request.getParameter("password");
+
+        ProfileDao profileDao = new ProfileDao();
+        if (!profileDao.isThere(username)) {
+            return "forgot_password";
+        }
+
+        profileDao.changePassword(password, username);
+
+
         return "change_password";
     }
 }

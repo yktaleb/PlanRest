@@ -20,6 +20,6 @@ public interface AbstractDao<T extends Model> {
 
     public void remove(T model);
 
-    public void updateValue(Table table, Column column, String value, String where, String whereValue);
+//    public void updateValue(Table table, Column column, String value, String where, String whereValue);
 
 }

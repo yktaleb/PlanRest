@@ -1,16 +1,17 @@
-<%--
-  Created by IntelliJ IDEA.
-  User: yarik
-  Date: 16.04.2016
-  Time: 2:28
-  To change this template use File | Settings | File Templates.
---%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<html>
+<html lang="en">
 <head>
-    <title>Title</title>
+    <meta http-equiv="Content-Type" content="text/html"; charset="UTF-8" />
+    <link href="<c:url value="/resources/css/change_password_and_check_user_style.css" />" rel="stylesheet" type="text/css">
+    <title>Registration</title>
 </head>
 <body>
+<div id="inf">
+    <p id="suc">Password successfully changed!</p>
+    <a href="login">You can continue work.</a>
+</div>
+
 
 </body>
 </html>

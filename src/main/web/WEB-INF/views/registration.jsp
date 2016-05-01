@@ -32,11 +32,12 @@
             <br>
             <center><input type="submit" value="Registration" class="btnLog"></center>
             <%
-                if (ProfileDao.isThere()){
+                if (ProfileDao.getIsThere()){
             %>
                     <center><p style="color: #a3000b;">This e-mail address already exists</p></center>
             <%
                 }
+                ProfileDao.setIsThere(false);
             %>
         </div>
 

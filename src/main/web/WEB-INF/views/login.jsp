@@ -21,7 +21,7 @@
         <input type="checkbox" name="_spring_security_remember_me">Remember me</input>
         <br/>
         <br/>
-        <a href="#" id="help">Forgot password?</a>
+        <a href="forgot_password" id="help">Forgot password?</a>
         <a href="registration" id="registration">Sign up now!</a>
         <br/>
         <c:if test="${not empty SPRING_SECURITY_LAST_EXCEPTION}">

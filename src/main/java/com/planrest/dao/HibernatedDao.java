@@ -119,26 +119,26 @@ public abstract class HibernatedDao<T extends Model> implements AbstractDao<T> {
         session = HibernateUtil.openSession();
         transaction = session.beginTransaction();
     }
-
-    @Override
-    public void updateValue(Table table, Column column, String value, String where, String whereValue) {
-        try {
-            startOperation();
-            Query query = session.createSQLQuery("UPDATE :table SET :column = :value WHERE :where = :whereValue");
-            query.setParameter("table", table);
-            query.setParameter("column", column);
-            query.setParameter("value", value);
-            query.setParameter("value", value);
-            query.setParameter("where", where);
-            query.setParameter("whereValue", whereValue);
-            query.executeUpdate();
-            transaction.commit();
-        } catch (Exception e) {
-            e.printStackTrace();
-        } finally {
-            HibernateUtil.closeSession(session);
-        }
-    }
+//
+//    @Override
+//    public void updateValue(Table table, Column column, String value, String where, String whereValue) {
+//        try {
+//            startOperation();
+//            Query query = session.createSQLQuery("UPDATE :table SET :column = :value WHERE :where = :whereValue");
+//            query.setParameter("table", table);
+//            query.setParameter("column", column);
+//            query.setParameter("value", value);
+//            query.setParameter("value", value);
+//            query.setParameter("where", where);
+//            query.setParameter("whereValue", whereValue);
+//            query.executeUpdate();
+//            transaction.commit();
+//        } catch (Exception e) {
+//            e.printStackTrace();
+//        } finally {
+//            HibernateUtil.closeSession(session);
+//        }
+//    }
 
     public Session getSession() {
         return session;

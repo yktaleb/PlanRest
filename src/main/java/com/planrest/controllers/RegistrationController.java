@@ -32,8 +32,6 @@ public class RegistrationController {
             return "registration";
         }
 
-
-
         User user = new User(profile.getEmail(), profile.getPassword(), true);
         UserDao userDao = new UserDao();
         userDao.add(user);
