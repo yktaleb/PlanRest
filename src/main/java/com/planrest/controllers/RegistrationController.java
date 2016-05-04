@@ -8,20 +8,16 @@ import com.planrest.models.GroupMembers;
 import com.planrest.models.Profile;
 import com.planrest.models.User;
 import org.springframework.stereotype.Controller;
-import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
-
-import javax.validation.Valid;
-import java.sql.SQLException;
 
 @Controller
 public class RegistrationController {
 
     @RequestMapping(value="/registration")
     public ModelAndView registration() {
-        return new ModelAndView("registration", "profile", new Profile());
+        return new ModelAndView("login_and_registration/registration", "profile", new Profile());
     }
 
     @RequestMapping(value="/check_user")
@@ -29,7 +25,7 @@ public class RegistrationController {
 
         ProfileDao profileDao = new ProfileDao();
         if (profileDao.isThere(profile.getEmail())){
-            return "registration";
+            return "login_and_registration/registration";
         }
 
         User user = new User(profile.getEmail(), profile.getPassword(), true);
@@ -47,6 +43,6 @@ public class RegistrationController {
 //        modelAndView.setViewName("check_user");
 //        modelAndView.addObject("prof", profile);
 
-        return "check_user";
+        return "login_and_registration/check_user";
     }
 }

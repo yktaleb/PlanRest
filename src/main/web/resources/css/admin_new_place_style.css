@@ -1,0 +1,61 @@
+body {
+    background-color: #CFD8DC;
+    font-family: Arial, sans-serif;
+    min-width: 1360px;
+}
+
+#main-block{
+    /*Выравнивание блока по центру*/
+    width: 1100px;
+    max-width: 1350px;
+    min-width: 1350px;
+    height: auto;
+    margin: 0 auto;
+    margin-top: 40px;
+    margin-bottom: 40px;
+    background-color: #ECEFF1;
+    /*background-color: #353067;*/
+    border: 2px solid silver;
+    padding: 15px;
+    border-radius: 15px;
+    min-width: 800px;
+}
+
+label{
+    display: inline-block;
+    width: 200px;
+    margin-left: 25px;
+    font-size: 15px;
+    vertical-align: top;
+}
+
+input{
+    display: inline-block;
+    width: 40%;
+    height: 20px;
+    font-size: 12px;
+    border: 2px solid silver;
+    border-radius: 5px;
+}
+
+textarea{
+    display: inline-block;
+    max-height: 170px;
+    max-width: 70%;
+    font-size: 12px;
+    border: 2px solid silver;
+    border-radius: 7px;
+}
+
+.img_place, .img_afisha{
+    margin-left: 25px;
+}
+
+.add_new_place{
+    display: block;
+    margin-left: 25px;
+    width: 150px;
+    height: 30px;
+    font-size: 20px;
+}
+

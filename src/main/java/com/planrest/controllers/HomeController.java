@@ -12,8 +12,7 @@ public class HomeController {
 
     @RequestMapping(value = {"/", "/login"}, method = RequestMethod.GET)
     public String login() {
-
-        return "login";
+        return "login_and_registration/login";
     }
 
     @RequestMapping(value = "/home", method = RequestMethod.GET)
@@ -24,7 +23,7 @@ public class HomeController {
     @RequestMapping(value = "/forgot_password", method = RequestMethod.GET)
     public String forgotPassword() {
         ProfileDao.setIsThere(true);
-        return "forgot_password";
+        return "login_and_registration/forgot_password";
     }
 
 
@@ -35,12 +34,14 @@ public class HomeController {
 
         ProfileDao profileDao = new ProfileDao();
         if (!profileDao.isThere(username)) {
-            return "forgot_password";
+            return "login_and_registration/forgot_password";
         }
 
         profileDao.changePassword(password, username);
 
 
-        return "change_password";
+        return "login_and_registration/change_password";
     }
+
+
 }
