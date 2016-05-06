@@ -77,13 +77,13 @@ public abstract class HibernatedDao<T extends Model> implements AbstractDao<T> {
         }
     }
 
+
     @Override
     public List<T> getAll(Class cl) {
         List objects = null;
         try {
             startOperation();
-            Query query = session.createSQLQuery("from " + cl.getName());
-            objects = query.list();
+            objects = session.createCriteria(cl).list();
             transaction.commit();
         } catch (Exception e) {
             e.printStackTrace();

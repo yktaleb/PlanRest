@@ -10,4 +10,5 @@ public class InstitutionDao extends HibernatedDao<Institution> {
     public List<Institution> getAllInstitution() {
         return getAll(Institution.class);
     }
+
 }

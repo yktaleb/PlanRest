@@ -1,0 +1,16 @@
+<%@ page pageEncoding="UTF-8" %>
+<!-- Меню -->
+<style>
+    @import url(/resources/css/jspf/top_menu_style.css);
+</style>
+<div class="menu">
+    <nav class="topmenu">
+        <ul>
+            <li><a href="places.jsp">Заведения</a></li>
+            <li><a href="">Пользователи</a></li>
+            <li><a href="">Календарь</a></li>
+            <li><a href="">Настройки</a></li>
+            <li><a href="j_spring_security_logout">Выход</a></li>
+        </ul>
+    </nav>
+</div>

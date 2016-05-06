@@ -1,19 +1,14 @@
 package com.planrest;
 
-import com.planrest.dao.impl.GroupDao;
-import com.planrest.dao.impl.GroupMembersDao;
-import com.planrest.dao.impl.ProfileDao;
-import com.planrest.dao.impl.UserDao;
-import com.planrest.models.Group;
-import com.planrest.models.GroupMembers;
-import com.planrest.models.Profile;
-import com.planrest.models.User;
+import com.planrest.dao.impl.*;
+import com.planrest.models.*;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.jdbc.JdbcDaoImpl;
 import org.springframework.security.provisioning.JdbcUserDetailsManager;
 import org.springframework.security.provisioning.UserDetailsManager;
 
 import java.sql.SQLException;
+import java.util.List;
 
 public class Main {
     public static void main(String[] args) {
@@ -48,7 +43,14 @@ public class Main {
 //            System.out.println("NO");
 //        }
 
-        ProfileDao profileDao = new ProfileDao();
-        profileDao.changePassword("4321", "dimas@gmail.com");
+//        ProfileDao profileDao = new ProfileDao();
+//        profileDao.changePassword("4321", "dimas@gmail.com");
+
+        InstitutionDao institutionDao = new InstitutionDao();
+        List<Institution> allInstitution = institutionDao.getAllInstitution();
+
+        for (Institution institution : allInstitution) {
+            System.out.println(institution.getAddress());
+        }
     }
 }

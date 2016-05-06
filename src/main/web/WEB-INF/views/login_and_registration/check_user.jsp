@@ -4,7 +4,7 @@
 <html>
 <head>
     <meta http-equiv="Content-Type" content="text/html"; charset="UTF-8" />
-    <link href="<c:url value="/resources/css/change_password_and_check_user_style.css" />" rel="stylesheet" type="text/css">
+    <link href="<c:url value="/resources/css/login_and_password/change_password_and_check_user_style.css" />" rel="stylesheet" type="text/css">
     <title>Registration</title>
 </head>
 <body>

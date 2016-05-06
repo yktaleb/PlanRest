@@ -1,0 +1,7 @@
+<%@ page pageEncoding="UTF-8" %>
+<div class="search_block">
+    <input type="text" placeholder="Поиск..." class="search_text" />
+    <input type="submit" value="Поиск" id="btn_search" />
+
+    <br/><br/>
+</div>

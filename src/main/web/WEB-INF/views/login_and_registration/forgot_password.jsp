@@ -4,7 +4,7 @@
 <html lang="en">
 <head>
     <meta http-equiv="Content-Type" content="text/html"; charset="UTF-8" />
-    <link href="<c:url value="/resources/css/style_forgot_password.css" />" rel="stylesheet" type="text/css">
+    <link href="<c:url value="/resources/css/login_and_password/style_forgot_password.css" />" rel="stylesheet" type="text/css">
     <title>Change password</title>
 
 </head>

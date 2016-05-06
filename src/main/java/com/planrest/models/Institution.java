@@ -15,7 +15,7 @@ public class Institution extends Model{
         super(id);
     }
 
-    public Institution(byte[] avatar, String name, String phoneNumber, String address, String linkInstitution, String workingHours, String kitchen, String services, String averageScore, String aboutInstitution) {
+    public Institution(byte[] avatar, String name, String phoneNumber, String address, String linkInstitution, String workingHours, String kitchen, String services, String aboutInstitution) {
         this.avatar = avatar;
         this.name = name;
         this.phoneNumber = phoneNumber;
@@ -24,7 +24,6 @@ public class Institution extends Model{
         this.workingHours = workingHours;
         this.kitchen = kitchen;
         this.services = services;
-        this.averageScore = averageScore;
         this.aboutInstitution = aboutInstitution;
     }
 

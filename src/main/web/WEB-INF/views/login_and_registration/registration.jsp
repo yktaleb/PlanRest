@@ -8,7 +8,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Registration</title>
-    <link href="<c:url value="/resources/css/style_registration.css" />" rel="stylesheet" type="text/css">
+    <link href="<c:url value="/resources/css/login_and_password/style_registration.css" />" rel="stylesheet" type="text/css">
 </head>
 
 <body>

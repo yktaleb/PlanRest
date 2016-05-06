@@ -10,4 +10,5 @@ public class ActivityHistoryDao extends HibernatedDao<ActivityHistory> {
     public List<ActivityHistory> getAllActivityHistory() {
         return getAll(ActivityHistory.class);
     }
+
 }

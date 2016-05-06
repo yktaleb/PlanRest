@@ -8,18 +8,7 @@
 </head>
 <body>
 
-<!-- Меню -->
-<div class="menu">
-    <nav class="topmenu">
-        <ul>
-            <li><a href="">Заведения</a></li>
-            <li><a href="">Пользователи</a></li>
-            <li><a href="">Календарь</a></li>
-            <li><a href="">Настройки</a></li>
-            <li><a href="">Выход</a></li>
-        </ul>
-    </nav>
-</div>
+<%@include file="jspf/top_menu.jspf" %>
 
 <!-- Форма со всей информацией -->
 <div id="institution">
