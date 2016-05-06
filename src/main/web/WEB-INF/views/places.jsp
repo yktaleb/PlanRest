@@ -1,6 +1,10 @@
 <%@ page import="com.planrest.dao.impl.InstitutionDao" %>
 <%@ page import="com.planrest.models.Institution" %>
 <%@ page import="java.util.List" %>
+<%@ page import="java.awt.image.BufferedImage" %>
+<%@ page import="javax.imageio.ImageIO" %>
+<%@ page import="java.io.ByteArrayInputStream" %>
+<%@ page import="java.io.InputStream" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html lang="en">
@@ -103,10 +107,18 @@
         <!-- Блок в котором отображаеться список заведений -->
         <div class="list_of_places">
 
+            <%
+                InstitutionDao institutionDao = new InstitutionDao();
+                List<Institution> allInstitution = institutionDao.getAllInstitution();
+                session.setAttribute("listOfAllInstitution", allInstitution);
+                for (Institution institution : allInstitution) {
+            %>
+
+
             <div class="card_of_place">
 
                 <div class="img_place">
-                    <img src="back.jpg" alt="">
+                    <img src="<%=request.getContextPath()%>/ShowImage?index=<%=allInstitution.indexOf(institution)%>" alt="">
                 </div>
 
                 <div class="short_inf">
@@ -117,7 +129,7 @@
                             </div>
 
                             <div class = "place_name" id="pl_nm">
-                                L`KAFA
+                                <%=institution.getName()%>
                             </div>
                         </div>
 
@@ -137,234 +149,17 @@
                             </div>
 
                             <div class = "adress" id="adr">
-                                проспект Героев Сталинграда,27
+                                <%=institution.getAddress()%>
                             </div>
                         </div>
 
                         <div class="inf">
                             <div class = "time">
-                                <b>Вреия работы:</b>
+                                <b>Время работы:</b>
                             </div>
 
                             <div class = "time" id="tm">
-                                Круглосуточно
-                            </div>
-                        </div>
-
-                    </div>
-
-                </div>
-
-            </div>
-
-
-            <div class="card_of_place">
-
-                <div class="img_place">
-                    <img src="back.jpg" alt="">
-                </div>
-
-                <div class="short_inf">
-                    <div class="center">
-                        <div class="inf">
-                            <div class = "place_name">
-                                <b>Название:</b>
-                            </div>
-
-                            <div class = "place_name" id="pl_nm">
-                                L`KAFA
-                            </div>
-                        </div>
-
-                        <div class="inf">
-                            <div class = "region">
-                                <b>Район:</b>
-                            </div>
-
-                            <div class = "region" id="reg">
-                                Оболонский
-                            </div>
-                        </div>
-
-                        <div class="inf">
-                            <div class = "adress">
-                                <b>Адрес:</b>
-                            </div>
-
-                            <div class = "adress" id="adr">
-                                проспект Героев Сталинграда,27
-                            </div>
-                        </div>
-
-                        <div class="inf">
-                            <div class = "time">
-                                <b>Вреия работы:</b>
-                            </div>
-
-                            <div class = "time" id="tm">
-                                Круглосуточно
-                            </div>
-                        </div>
-
-                    </div>
-
-                </div>
-
-            </div>
-
-            <div class="card_of_place">
-
-                <div class="img_place">
-                    <img src="back.jpg" alt="">
-                </div>
-
-                <div class="short_inf">
-                    <div class="center">
-                        <div class="inf">
-                            <div class = "place_name">
-                                <b>Название:</b>
-                            </div>
-
-                            <div class = "place_name" id="pl_nm">
-                                L`KAFA
-                            </div>
-                        </div>
-
-                        <div class="inf">
-                            <div class = "region">
-                                <b>Район:</b>
-                            </div>
-
-                            <div class = "region" id="reg">
-                                Оболонский
-                            </div>
-                        </div>
-
-                        <div class="inf">
-                            <div class = "adress">
-                                <b>Адрес:</b>
-                            </div>
-
-                            <div class = "adress" id="adr">
-                                проспект Героев Сталинграда,27
-                            </div>
-                        </div>
-
-                        <div class="inf">
-                            <div class = "time">
-                                <b>Вреия работы:</b>
-                            </div>
-
-                            <div class = "time" id="tm">
-                                Круглосуточно
-                            </div>
-                        </div>
-
-                    </div>
-
-                </div>
-
-            </div>
-
-            <div class="card_of_place">
-
-                <div class="img_place">
-                    <img src="back.jpg" alt="">
-                </div>
-
-                <div class="short_inf">
-                    <div class="center">
-                        <div class="inf">
-                            <div class = "place_name">
-                                <b>Название:</b>
-                            </div>
-
-                            <div class = "place_name" id="pl_nm">
-                                L`KAFA
-                            </div>
-                        </div>
-
-                        <div class="inf">
-                            <div class = "region">
-                                <b>Район:</b>
-                            </div>
-
-                            <div class = "region" id="reg">
-                                Оболонский
-                            </div>
-                        </div>
-
-                        <div class="inf">
-                            <div class = "adress">
-                                <b>Адрес:</b>
-                            </div>
-
-                            <div class = "adress" id="adr">
-                                проспект Героев Сталинграда,27
-                            </div>
-                        </div>
-
-                        <div class="inf">
-                            <div class = "time">
-                                <b>Вреия работы:</b>
-                            </div>
-
-                            <div class = "time" id="tm">
-                                Круглосуточно
-                            </div>
-                        </div>
-
-                    </div>
-
-                </div>
-
-            </div>
-
-            <div class="card_of_place">
-
-                <div class="img_place">
-                    <img src="back.jpg" alt="">
-                </div>
-
-                <div class="short_inf">
-                    <div class="center">
-                        <div class="inf">
-                            <div class = "place_name">
-                                <b>Название:</b>
-                            </div>
-
-                            <div class = "place_name" id="pl_nm">
-                                L`KAFA
-                            </div>
-                        </div>
-
-                        <div class="inf">
-                            <div class = "region">
-                                <b>Район:</b>
-                            </div>
-
-                            <div class = "region" id="reg">
-                                Оболонский
-                            </div>
-                        </div>
-
-                        <div class="inf">
-                            <div class = "adress">
-                                <b>Адрес:</b>
-                            </div>
-
-                            <div class = "adress" id="adr">
-                                проспект Героев Сталинграда,27
-                            </div>
-                        </div>
-
-                        <div class="inf">
-                            <div class = "time">
-                                <b>Вреия работы:</b>
-                            </div>
-
-                            <div class = "time" id="tm">
-                                Круглосуточно
+                                <%=institution.getWorkingHours()%>
                             </div>
                         </div>
 
@@ -375,14 +170,6 @@
             </div>
 
             <%
-                InstitutionDao institutionDao = new InstitutionDao();
-                List<Institution> allInstitution = institutionDao.getAllInstitution();
-
-                for (Institution institution : allInstitution) {
-                    %>
-            <h1> <%=institution.getAddress()%> </h1>
-            </br>
-                    <%
                 }
             %>
 

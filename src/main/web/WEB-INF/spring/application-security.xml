@@ -46,13 +46,15 @@
 			<intercept-url pattern="/admin_new_place" access="ROLE_ADMIN" />
 
 
+
 			<form-login login-page='/login'
 						default-target-url="/home"
 						authentication-failure-url="/login?error=true"
 						username-parameter="username"
 						password-parameter="password"/>
 
-			<logout logout-success-url="/login" />
+
+		<logout logout-success-url="/login" />
 
 		<remember-me/>
 		<!--<remember-me data-source-ref="dataSource" />-->
@@ -65,7 +67,6 @@
 		<beans:property name="enableAuthorities" value="false" />
 		<beans:property name="dataSource" ref="dataSource" />
 	</beans:bean>
-
 
 
 

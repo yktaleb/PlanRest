@@ -6,7 +6,7 @@
 <div class="menu">
     <nav class="topmenu">
         <ul>
-            <li><a href="places.jsp">Заведения</a></li>
+            <li><a href="places">Заведения</a></li>
             <li><a href="">Пользователи</a></li>
             <li><a href="">Календарь</a></li>
             <li><a href="">Настройки</a></li>

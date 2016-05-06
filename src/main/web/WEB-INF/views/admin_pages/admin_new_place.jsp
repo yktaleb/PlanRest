@@ -12,14 +12,16 @@
 
 <%@include file="/WEB-INF/views/jspf/top_menu.jspf" %>
 
+
     <form:form method="POST" commandName="institution" action="admin_new_place_check" acceptCharset="UTF-8">
+
 
         <div id="main-block">
             <p><h3>Заполните поля указаной информацией о заведении</h3></p>
             <ol>
                 <li>
                     <p>Аватар:</p>
-                    <form:input path="avatar" type="file" class="img_place"/>
+                    <form:input path="avatar" type="file" class="img_place" name="avatar"/>
                     <br/>
                     <p>Текстовая информация:</p>
                     <label for="name" >Название:</label>
