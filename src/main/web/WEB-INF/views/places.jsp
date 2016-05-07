@@ -14,79 +14,6 @@
 
 
     <title>Выбор заведения</title>
-    <!-- Это сккрипты для открытия и закрытия блоков с категориями -->
-    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
-
-    <script type="text/javascript">
-        $(document).ready(function(){
-            $('.type_body').hide();
-            $('.type_title').click(function(){
-                $(this).toggleClass('opened').toggleClass('closed').next().slideToggle();
-                if($(this).hasClass('opened')) {
-                    $(this).html('Тип ▲');
-                }
-                else {
-                    $(this).html('Тип ▼');
-                }
-            });
-        });
-    </script>
-
-    <script type="text/javascript">
-        $(document).ready(function(){
-            $('.kitchen_body').hide();
-            $('.kitchen_title').click(function(){
-                $(this).toggleClass('opened').toggleClass('closed').next().slideToggle();
-                if($(this).hasClass('opened')) {
-                    $(this).html('Кухня ▲');
-                }
-                else {
-                    $(this).html('Кухня ▼');
-                }
-            });
-        });
-    </script>
-
-    <script type="text/javascript">
-        $(document).ready(function(){
-            $('.region_body').hide();
-            $('.region_title').click(function(){
-                $(this).toggleClass('opened').toggleClass('closed').next().slideToggle();
-                if($(this).hasClass('opened')) {
-                    $(this).html('Район ▲');
-                }
-                else {
-                    $(this).html('Район ▼');
-                }
-            });
-        });
-    </script>
-
-    <script type="text/javascript">
-        $(document).ready(function(){
-            $('.service_body').hide();
-            $('.service_title').click(function(){
-                $(this).toggleClass('opened').toggleClass('closed').next().slideToggle();
-                if($(this).hasClass('opened')) {
-                    $(this).html('Район ▲');
-                }
-                else {
-                    $(this).html('Район ▼');
-                }
-            });
-        });
-    </script>
-
-    <script type="text/javascript">
-        $(document).ready(function(){
-            $('.type_body').hide();
-            $('.a').click(function(){
-                $(this).toggleClass('opened').toggleClass('closed').next().slideToggle();
-
-            });
-        });
-    </script>
-
 
 </head>
 <body>
@@ -96,8 +23,8 @@
 
 <!-- Главный блок с инфой -->
 <div id="main_block">
-    <!-- Блок с категориями поиска (находиться в левой колонке) -->
 
+    <!-- Блок с категориями поиска (находиться в левой колонке) -->
     <%@include file="jspf/search_left_menu.jspf" %>
 
     <!-- Блок поиска -->

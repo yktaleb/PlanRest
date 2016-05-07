@@ -12,46 +12,46 @@
 
 <%@include file="/WEB-INF/views/jspf/top_menu.jspf" %>
 
-
-    <form:form method="POST" commandName="institution" action="admin_new_place_check" acceptCharset="UTF-8">
-
-
         <div id="main-block">
             <p><h3>Заполните поля указаной информацией о заведении</h3></p>
             <ol>
                 <li>
-                    <p>Аватар:</p>
-                    <form:input path="avatar" type="file" class="img_place" name="avatar"/>
-                    <br/>
-                    <p>Текстовая информация:</p>
-                    <label for="name" >Название:</label>
-                    <form:input path="name" type="text" id="name" />
-                    <br/><br/>
-                    <label for="region" >Район:</label>
-                    <input type="text" id="region" />
-                    <br/><br/>
-                    <label for="telephone">Телефон:</label>
-                    <form:input path="phoneNumber" type="text" id="telephone" />
-                    <br/><br/>
-                    <label for="adress">Адрес:</label>
-                    <form:input path="address" type="text" id="adress" />
-                    <br/><br/>
-                    <label for="time_worcking">Время работы:</label>
-                    <form:input path="workingHours" type="text" id="time_worcking" />
-                    <br/><br/>
-                    <label for="kitchen">Кухня:</label>
-                    <form:input path="kitchen" type="text" id="kitchen" />
-                    <br/><br/>
-                    <label for="service">Сервис:</label>
-                    <form:input path="services" type="text" id="service" />
-                    <br/><br/>
-                    <label for="sait">Сайт:</label>
-                    <form:input path="linkInstitution" type="url" id="sait" />
-                    <br/><br/>
-                    <label for="about">Описание:</label>
-                    <form:textarea path="aboutInstitution" name="text_about" id="about" cols="100" rows="15" wrap="soft"></form:textarea>
-                    <br/><br/>
+                    <br method="POST" action="admin_new_place_check" enctype="multipart/form-data">
+                        <p>Аватар:</p>
+                        <input  type="file" class="img_place" name="avatar"/>
+                        <p>Текстовая информация:</p>
+                        <label for="name" >Название:</label>
+                        <input type="text" id="name" name="value"/>
+                        <br/><br/>
+                        <label for="region" >Район:</label>
+                        <input type="text" id="region" name="value"/>
+                        <br/><br/>
+                        <label for="telephone">Телефон:</label>
+                        <input type="text" id="telephone" name="value"/>
+                        <br/><br/>
+                        <label for="adress">Адрес:</label>
+                        <input type="text" id="adress" name="value"/>
+                        <br/><br/>
+                        <label for="time_worcking">Время работы:</label>
+                        <input type="text" id="time_worcking" name="value"/>
+                        <br/><br/>
+                        <label for="kitchen">Кухня:</label>
+                        <input type="text" id="kitchen" name="value"/>
+                        <br/><br/>
+                        <label for="service">Сервис:</label>
+                        <input type="text" id="service" name="value"/>
+                        <br/><br/>
+                        <label for="sait">Сайт:</label>
+                        <input type="url" id="sait" name="value"/>
+                        <br/><br/>
+                        <label for="about">Описание:</label>
+                        <textarea id="about" cols="100" rows="15" wrap="soft" name="value"></textarea>
+                        </br></br>
+                        <p>После проверки всей информации нажмите кнопку готово:</p>
+                        <input type="submit" value="Готово" class="add_new_place"/>
+                    </form>
                 </li>
+
 
                 <li>
                     <p>Изображение заведения:</p>
@@ -72,12 +72,13 @@
                     <br/><br/>
                 </li>
 
-                <li><p>После проверки всей информации нажмите кнопку готово:</p>
+                <li>
+                    <p>После проверки всей информации нажмите кнопку готово:</p>
                     <input type="submit" value="Готово" class="add_new_place"/>
                 </li>
             </ol>
         </div>
-    </form:form>>
+
 
 
 </body>
