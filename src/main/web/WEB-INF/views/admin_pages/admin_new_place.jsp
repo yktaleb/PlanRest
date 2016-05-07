@@ -16,7 +16,7 @@
             <p><h3>Заполните поля указаной информацией о заведении</h3></p>
             <ol>
                 <li>
-                    <br method="POST" action="admin_new_place_check" enctype="multipart/form-data">
+                    <form method="POST" action="admin_new_place_check" enctype="multipart/form-data">
                         <p>Аватар:</p>
                         <input  type="file" class="img_place" name="avatar"/>
                         <p>Текстовая информация:</p>

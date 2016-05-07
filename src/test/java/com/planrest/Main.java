@@ -46,11 +46,19 @@ public class Main {
 //        ProfileDao profileDao = new ProfileDao();
 //        profileDao.changePassword("4321", "dimas@gmail.com");
 
-        InstitutionDao institutionDao = new InstitutionDao();
-        List<Institution> allInstitution = institutionDao.getAllInstitution();
+//        InstitutionDao institutionDao = new InstitutionDao();
+//        List<Institution> allInstitution = institutionDao.getAllInstitution();
+//
+//        for (Institution institution : allInstitution) {
+//            System.out.println(institution.getAddress());
+//        }
 
-        for (Institution institution : allInstitution) {
-            System.out.println(institution.getAddress());
-        }
+//        Institution institution1 = new Institution("first", "04444556", "Solom", "<maahch");
+//        Institution institution2 = new Institution("second", "04444556", "Solom", "<maahch");
+//        Institution institution3 = new Institution("third", "04444556", "Solom", "<maahch");
+//
+//
+//
+//        institution1.setServices();
     }
 }

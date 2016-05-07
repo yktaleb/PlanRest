@@ -29,6 +29,10 @@
     <mapping class="com.planrest.models.PhotosProfile"/>
     <mapping class="com.planrest.models.Profile"/>
     <mapping class="com.planrest.models.Visitor"/>
+    <mapping class="com.planrest.models.Kitchen"/>
+    <mapping class="com.planrest.models.Service"/>
+    <mapping class="com.planrest.models.Type"/>
+    <mapping class="com.planrest.models.Affiche"/>
 
     <mapping class="com.planrest.models.User"/>
     <mapping class="com.planrest.models.Group"/>

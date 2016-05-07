@@ -133,17 +133,22 @@ public class AdminController {
         Institution institution = new Institution();
         institution.setAvatar(bytes);
         institution.setName(values[0]);
-//        institution.setRegion(values[1]);
+        institution.setRegion(values[1]);
         institution.setPhoneNumber(values[2]);
         institution.setAddress(values[3]);
         institution.setWorkingHours(values[4]);
-        institution.setKitchen(values[5]);
-        institution.setServices(values[6]);
+        String[] kitchens = values[5].split(",");
+        for (String kitchen : kitchens) {
+            kitchen = kitchen.trim();
+            System.out.println(kitchen);
+        }
+//        institution.setKitchen(values[5]);
+//        institution.setServices(values[6]);
         institution.setLinkInstitution(values[7]);
         institution.setAboutInstitution(values[8]);
 
         InstitutionDao institutionDao = new InstitutionDao();
-        institutionDao.add(institution);
+//        institutionDao.add(institution);
 
         return "admin_pages/admin_new_place_check";
     }
