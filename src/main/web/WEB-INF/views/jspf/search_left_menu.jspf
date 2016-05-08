@@ -1,7 +1,6 @@
-<%@ page import="com.planrest.dao.impl.KitchenListDao" %>
-<%@ page import="com.planrest.dao.impl.RegionListDao" %>
-<%@ page import="com.planrest.dao.impl.ServiceListDao" %>
-<%@ page import="com.planrest.dao.impl.TypeListDao" %>
+<%@ page import="com.planrest.util.KitchenList" %>
+<%@ page import="com.planrest.util.ServiceList" %>
+<%@ page import="com.planrest.util.TypeList" %>
 <%@ page pageEncoding="UTF-8" %>
 <!-- Это сккрипты для открытия и закрытия блоков с категориями -->
 <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
@@ -83,15 +82,24 @@
 <div class="category_block">
 
     <%
-        KitchenListDao kitchenListDao = new KitchenListDao();
-        RegionListDao regionListDao = new RegionListDao();
-        ServiceListDao serviceListDao = new ServiceListDao();
-        TypeListDao typeListDao = new TypeListDao();
 
-        String[] kitchenTitles = kitchenListDao.getAllTitle();
-        String[] regionTitles = regionListDao.getAllTitle();
-        String[] serviceTitles = serviceListDao.getAllTitle();
-        String[] typeTitles = typeListDao.getAllTitle();
+//        KitchenListDao kitchenListDao = new KitchenListDao();
+//        RegionListDao regionListDao = new RegionListDao();
+//        ServiceListDao serviceListDao = new ServiceListDao();
+//        TypeListDao typeListDao = new TypeListDao();
+
+//        String[] kitchenTitles = kitchenListDao.getAllTitle();
+//        String[] regionTitles = regionListDao.getAllTitle();
+//        String[] serviceTitles = serviceListDao.getAllTitle();
+//        String[] typeTitles = typeListDao.getAllTitle();
+
+        KitchenList kitchenList = new KitchenList();
+        ServiceList serviceList = new ServiceList();
+        TypeList typeList = new TypeList();
+
+        String[] kitchenTitles = kitchenList.getKitchenList();
+        String[] serviceTitles = serviceList.
+        String[] typeTitles = typeList.getTypeList()
 
     %>
 
@@ -194,16 +202,29 @@
     <b class="region_title closed">Район ▼</b>
 
     <div class="region_body">
-        <div class="col_1">
-            <%
-                for (int i = 0; i < regionTitles.length; i++) {
-            %>
-            <a class="a opened" href="places?region_id=<%=i%>"><%=regionTitles[i]%></a>
-            <%
-                }
-            %>
-        </div>
+        <%--<div class="col_1">--%>
+            <%--<%--%>
+                <%--for (int i = 0; i < regionTitles.length; i++) {--%>
+            <%--%>--%>
+            <%--<a class="a opened" href="places?region_id=<%=i%>"><%=regionTitles[i]%></a>--%>
+            <%--<%--%>
+                <%--}--%>
+            <%--%>--%>
+        <%--</div>--%>
 
+        <div class="col_1">
+            <a class="a opened" href="places?region_id=0>">Голосеевский</a>
+            <a class="a opened" href="places?region_id=1">Дарницкий</a>
+            <a class="a opened" href="places?region_id=2">Деснянский </a>
+            <a class="a opened" href="places?region_id=3">Днепровский</a>
+            <a class="a opened" href="places?region_id=4">Оболонский</a>
+            <a class="a opened" href="places?region_id=5">Печерский</a>
+            <a class="a opened" href="places?region_id=6">Подольский</a>
+            <a class="a opened" href="places?region_id=7">Святошинский</a>
+            <a class="a opened" href="places?region_id=8">Соломенский</a>
+            <a class="a opened" href="places?region_id=9">Шевченковский</a>
+
+        </div>
     </div>
 
     <br/><br/>

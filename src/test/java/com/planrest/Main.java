@@ -1,15 +1,9 @@
 package com.planrest;
 
-import com.planrest.dao.impl.*;
-import com.planrest.models.*;
-import org.springframework.security.core.userdetails.UserDetails;
-import org.springframework.security.core.userdetails.jdbc.JdbcDaoImpl;
-import org.springframework.security.provisioning.JdbcUserDetailsManager;
-import org.springframework.security.provisioning.UserDetailsManager;
+//import com.planrest.models.*;
 
-import java.sql.SQLException;
-import java.util.ArrayList;
-import java.util.List;
+import com.planrest.util.KitchenList;
+import com.planrest.util.ServiceList;
 
 public class Main {
     public static void main(String[] args) {
@@ -281,6 +275,11 @@ public class Main {
 //        KitchenDao kitchenDao = new KitchenDao();
 //        kitchenDao.addList(kitchens);
 
+
+//        ServiceList kitchenList = new ServiceList();
+        for (String s : KitchenList.getAllTitle()) {
+            System.out.println(s);
+        }
 
     }
 }
