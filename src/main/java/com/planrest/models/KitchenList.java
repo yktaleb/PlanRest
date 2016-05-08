@@ -3,15 +3,19 @@ package com.planrest.models;
 import javax.persistence.*;
 
 @Entity
-@Table(name = "service", schema = "PlanRest")
-public class Service extends Model{
+@Table(name = "kitchen_list", schema = "PlanRest")
+public class KitchenList extends Model{
 
-    public Service() {
+    public KitchenList() {
         super();
     }
 
-    public Service(Long id) {
+    public KitchenList(Long id) {
         super(id);
+    }
+
+    public KitchenList(String title) {
+        this.title = title;
     }
 
     @Id
@@ -21,10 +25,6 @@ public class Service extends Model{
 
     @Column(name = "title", nullable = false)
     private String title;
-
-    @ManyToOne
-    @JoinColumn(name = "Institution_id", nullable = false)
-    private Institution institution;
 
     @Override
     public Long getId() {
@@ -44,11 +44,4 @@ public class Service extends Model{
         this.title = title;
     }
 
-    public Institution getInstitution() {
-        return institution;
-    }
-
-    public void setInstitution(Institution institution) {
-        this.institution = institution;
-    }
 }

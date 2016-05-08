@@ -33,6 +33,10 @@
     <mapping class="com.planrest.models.Service"/>
     <mapping class="com.planrest.models.Type"/>
     <mapping class="com.planrest.models.Affiche"/>
+    <mapping class="com.planrest.models.RegionList"/>
+    <mapping class="com.planrest.models.TypeList"/>
+    <mapping class="com.planrest.models.KitchenList"/>
+    <mapping class="com.planrest.models.ServiceList"/>
 
     <mapping class="com.planrest.models.User"/>
     <mapping class="com.planrest.models.Group"/>

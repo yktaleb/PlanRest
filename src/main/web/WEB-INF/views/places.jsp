@@ -5,6 +5,7 @@
 <%@ page import="javax.imageio.ImageIO" %>
 <%@ page import="java.io.ByteArrayInputStream" %>
 <%@ page import="java.io.InputStream" %>
+<%@ page import="java.util.Enumeration" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html lang="en">
@@ -35,6 +36,12 @@
         <div class="list_of_places">
 
             <%
+                Enumeration enumeration = request.getParameterNames();
+//                if (enumeration.nextElement() != null) {
+//                    String parameterName = (String) enumeration.nextElement();
+//                }
+                System.out.println(enumeration.nextElement().toString());
+
                 InstitutionDao institutionDao = new InstitutionDao();
                 List<Institution> allInstitution = institutionDao.getAllInstitution();
                 session.setAttribute("listOfAllInstitution", allInstitution);

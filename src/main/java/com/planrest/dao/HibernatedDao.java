@@ -18,6 +18,12 @@ public abstract class HibernatedDao<T extends Model> implements AbstractDao<T> {
     protected Session session;
     protected Transaction transaction;
 
+    public void addList(List<T> models) {
+        for (T model : models) {
+            add(model);
+        }
+    }
+
 
     @Override
     public void add(T model) {
@@ -92,6 +98,7 @@ public abstract class HibernatedDao<T extends Model> implements AbstractDao<T> {
         }
         return objects;
     }
+
 
 //    @Override
 //    public T getById(Class cl, Long id) {

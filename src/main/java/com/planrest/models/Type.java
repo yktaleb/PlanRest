@@ -19,7 +19,7 @@ public class Type extends Model{
     @Column(name = "id", nullable = false)
     private Long id;
 
-    @Column(name = "name", nullable = false)
+    @Column(name = "title", nullable = false)
     private String title;
 
     @ManyToOne

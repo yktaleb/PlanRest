@@ -1,5 +1,5 @@
 body {
-    background-color: #17161F;
+	background-color: #17161F;
 	font-family: Arial, sans-serif;
 	min-width: 1360px;
 }
@@ -14,21 +14,21 @@ h3{
 	width: 1100px;
 	max-width: 1350px;
 	min-width: 1350px;
-    height: auto;
-    margin: 0 auto;
-    margin-top: 50px;
-    background-color: rgba(33, 27, 27, 0.9);
-    border: 2px solid silver;
-    padding: 15px;
-    border-radius: 15px;
-    min-width: 800px;
+	height: 1900px;
+	margin: 0 auto;
+	margin-top: 50px;
+	background-color: rgba(33, 27, 27, 0.9);
+	border: 2px solid silver;
+	padding: 15px;
+	border-radius: 15px;
+	min-width: 800px;
 }
 /*Главный блок с инфой закончился*/
 
 .category_block{
 	display: inline-block;
 	width: 200px;
-	height: 1500px;
+	height: 1900px;
 	padding: 15px;
 	/*background-color: #353067;*/
 	vertical-align: top;
@@ -59,9 +59,9 @@ h3{
 	margin-left: 10px;
 	/*margin: 0 auto;*/
 	border: 2px solid silver;
-    border-radius: 5px;
-    font-size: 18px;
-    /*vertical-align: middle;*/
+	border-radius: 5px;
+	font-size: 18px;
+	/*vertical-align: middle;*/
 
 }
 
@@ -72,10 +72,10 @@ h3{
 	margin: 0 auto;
 	margin-top: 10px;
 	border: 2px solid silver;
-    border-radius: 5px;
-    font-size: 15px;
-    background-color: #ECEFF1;
-    /*vertical-align: middle;*/
+	border-radius: 5px;
+	font-size: 15px;
+	background-color: #ECEFF1;
+	/*vertical-align: middle;*/
 }
 
 .type_title{
@@ -91,18 +91,18 @@ h3{
 
 .type_body{
 	display: block;
-	width: 500px;
-	height: 290px;
+	width: 650px;
+	height: 390px;
 	overflow: auto;
 	background-color: #E0F2F1;
 	border: 2px solid silver;
-    padding: 5px;
-    border-radius: 7px;
-    position: relative;
-    z-index: 100;
+	padding: 5px;
+	border-radius: 7px;
+	position: relative;
+	z-index: 100;
 }
 
-.type_body .col_1, .col_2, .col_3{
+.type_body .col_1, .col_2, .col_3, .col_4{
 	display: inline-block;
 	height: auto;
 	width: 150px;
@@ -125,19 +125,19 @@ h3{
 
 .type_body a:link	{
 	text-decoration: none;
-	color: #000000; 
+	color: #000000;
 }
 .type_body a:visited	{
 	text-decoration: none;
-	color: #000000; 
+	color: #000000;
 }
 .type_body a:active	{
 	text-decoration: underline;
-	color: #000000; 
+	color: #000000;
 }
 .type_body a:hover	{
 	text-decoration: underline;
-	color: #000000; 
+	color: #000000;
 }
 
 /*2*/
@@ -149,18 +149,18 @@ h3{
 
 .kitchen_body{
 	display: block;
-	width: 500px;
-	height: 290px;
+	width: 650px;
+	height: 390px;
 	overflow: auto;
 	background-color: #E0F2F1;
 	border: 2px solid silver;
-    padding: 5px;
-    border-radius: 7px;
-    position: relative;
-    z-index: 100;
+	padding: 5px;
+	border-radius: 7px;
+	position: relative;
+	z-index: 100;
 }
 
-.kitchen_body .col_1, .col_2, .col_3{
+.kitchen_body .col_1, .col_2, .col_3, .col_4{
 	display: inline-block;
 	height: auto;
 	width: 150px;
@@ -175,19 +175,19 @@ h3{
 
 .kitchen_body a:link	{
 	text-decoration: none;
-	color: #000000; 
+	color: #000000;
 }
 .kitchen_body a:visited	{
 	text-decoration: none;
-	color: #000000; 
+	color: #000000;
 }
 .kitchen_body a:active	{
 	text-decoration: underline;
-	color: #000000; 
+	color: #000000;
 }
 .kitchen_body a:hover	{
 	text-decoration: underline;
-	color: #000000; 
+	color: #000000;
 }
 
 /*3*/
@@ -198,18 +198,18 @@ h3{
 
 .region_body{
 	display: block;
-	width: 500px;
-	height: 290px;
+	width: 150px;
+	height: 250px;
 	overflow: auto;
 	background-color: #E0F2F1;
 	border: 2px solid silver;
-    padding: 5px;
-    border-radius: 7px;
-    position: relative;
-    z-index: 100;
+	padding: 5px;
+	border-radius: 7px;
+	position: relative;
+	z-index: 100;
 }
 
-.region_body .col_1, .col_2, .col_3{
+.region_body .col_1, .col_2, .col_3, .col_4{
 	display: inline-block;
 	height: auto;
 	width: 150px;
@@ -224,19 +224,19 @@ h3{
 
 .region_body a:link	{
 	text-decoration: none;
-	color: #000000; 
+	color: #000000;
 }
 .region_body a:visited	{
 	text-decoration: none;
-	color: #000000; 
+	color: #000000;
 }
 .region_body a:active	{
 	text-decoration: underline;
-	color: #000000; 
+	color: #000000;
 }
 .region_body a:hover	{
 	text-decoration: underline;
-	color: #000000; 
+	color: #000000;
 }
 
 /*4*/
@@ -247,18 +247,18 @@ h3{
 
 .service_body{
 	display: block;
-	width: 500px;
-	height: 290px;
+	width: 650px;
+	height: 390px;
 	overflow: auto;
 	background-color: #E0F2F1;
 	border: 2px solid silver;
-    padding: 5px;
-    border-radius: 7px;
-    position: relative;
-    z-index: 100;
+	padding: 5px;
+	border-radius: 7px;
+	position: relative;
+	z-index: 100;
 }
 
-.service_body .col_1, .col_2, .col_3{
+.service_body .col_1, .col_2, .col_3, .col_4{
 	display: inline-block;
 	height: auto;
 	width: 150px;
@@ -273,19 +273,19 @@ h3{
 
 .service_body a:link	{
 	text-decoration: none;
-	color: #000000; 
+	color: #000000;
 }
 .service_body a:visited	{
 	text-decoration: none;
-	color: #000000; 
+	color: #000000;
 }
 .service_body a:active	{
 	text-decoration: underline;
-	color: #000000; 
+	color: #000000;
 }
 .service_body a:hover	{
 	text-decoration: underline;
-	color: #000000; 
+	color: #000000;
 }
 
 .list_of_places{
@@ -296,7 +296,7 @@ h3{
 	padding: 15px;
 	vertical-align: top;
 	/*background-color: #000000;*/
-	position: relative; 
+	position: relative;
 	z-index: 1;
 }
 
@@ -360,25 +360,25 @@ h3{
 
 .inf{
 	display: block;
-    margin: 5px;
-    margin-top: 15px;
+	margin: 5px;
+	margin-top: 15px;
 }
 
 .place_name, .region, .adress, .time{
-    display:inline-block;
-    vertical-align: top;
-    width: 120px;
-    /*margin-left: 15px;*/
-    font-size: 15px;
-    /*background-color: #C6FF00;*/
+	display:inline-block;
+	vertical-align: top;
+	width: 120px;
+	/*margin-left: 15px;*/
+	font-size: 15px;
+	/*background-color: #C6FF00;*/
 }
 
 #pl_nm, #reg, #tm, #adr{
 	display: inline-block;
-    width: 300px;
-    margin-left: 15px;
-    font-size: 15px;
-    /*background-color: #C6FF00;*/
+	width: 300px;
+	margin-left: 15px;
+	font-size: 15px;
+	/*background-color: #C6FF00;*/
 }
 
 

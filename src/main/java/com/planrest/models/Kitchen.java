@@ -14,12 +14,17 @@ public class Kitchen extends Model{
         super(id);
     }
 
+    public Kitchen(String title, Institution institution) {
+        this.title = title;
+        this.institution = institution;
+    }
+
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "id", nullable = false)
     private Long id;
 
-    @Column(name = "name", nullable = false)
+    @Column(name = "title", nullable = false)
     private String title;
 
     @ManyToOne
