@@ -1,5 +1,8 @@
+<%@ page import="com.planrest.dao.impl.InstitutionDao" %>
+<%@ page import="com.planrest.models.Institution" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<!DOCTYPE>
 <html lang="en">
 <head>
     <meta http-equiv="Content-Type" content="text/html"; charset="UTF-8" />
@@ -9,6 +12,12 @@
 <body>
 
 <%@include file="jspf/top_menu.jspf" %>
+
+<%
+    InstitutionDao institutionDao = new InstitutionDao();
+    Institution institution = institutionDao.getInstitutionById(Long.valueOf(request.getParameter("institution_id")));
+
+%>
 
 <!-- Форма со всей информацией -->
 <div id="institution">
@@ -28,7 +37,7 @@
                 </div>
 
                 <div class = "place_name" id="pl_nm">
-                    L`KAFA
+                    <%=institution.getName()%>
                 </div>
             </div>
 
@@ -38,7 +47,7 @@
                 </div>
 
                 <div class = "region" id="reg">
-                    Оболонский
+                    <%=institution.getRegion()%>
                 </div>
             </div>
 
@@ -48,19 +57,19 @@
                 </div>
 
                 <div class = "inf-tel" id="tel">
-                    (044) 362 73 34
+                    <%=institution.getPhoneNumber()%>
                 </div>
             </div>
             <div class="inf">
                 <div class = "inf-adress">
                     <b>Адрес:</b>
                 </div>
-                <div class = "inf-adress" id="adress">проспект Героев Сталинграда,27</div>
+                <div class = "inf-adress" id="adress"> <%=institution.getAddress()%></div>
             </div>
 
             <div class="inf">
                 <div class = "inf-time-working"><b>Время работы:</b></div>
-                <div class = "inf-time-working" id="time-working">Круглосуточно</div>
+                <div class = "inf-time-working" id="time-working"> <%=institution.getWorkingHours()%></div>
             </div>
 
             <div class="inf">
@@ -75,18 +84,16 @@
 
             <div class="inf">
                 <div class = "inf-site"><b>Сайт:</b></div>
-                <div class = "inf-site" id="site"><a href="http://lkafa-cafe.com.ua/" target="_blank">lkafa-cafe.com.ua</a></div>
+                <div class = "inf-site" id="site"><a href="http://lkafa-cafe.com.ua/" target="_blank"> <%=institution.getLinkInstitution()%></a></div>
             </div>
 
             <div class="inf">
                 <div class = "inf-above-inst">
                     <b>Описание:</b>
                 </div>
-                <p id="inf-text">L`KAFA CAFE Lounge Dance Karaoke на Героїв Сталінграда,27 — затишний 2-поверховий заклад мережі L`KAFA CAFE, розташований в зручному місці в 5 хвилинах від метро «Мінська» на Оболонському масиві! Відтепер усі жителі района зможуть насолодитися усіма привілеями гідного відпочинку!  Стаціонарна літня тераса,  просторі і водночас затишні Lounge-зал на 1-му поверсі і Dance Karaoke Hall на 2-му!  Кожен гість знайде тут для себе щось особливе та приємне! Бездоганні страви від найкращих майстрів, справжня піч для приготування оригінальної італіської піци, суші-шеф приготує суші, скуштувавши які, можна відчути дотик стильної Японії, найкращі традиції та смаки Європейської кухні, вишукана  Східна Кухня — усі накращі страви з різних куточків світу представлені в різноманітному Меню L`KAFA CAFE!
-
-                    L`Kafa Dance Karaoke Hall (2-й поверх)  - це територія яскравих караоке-вечірок та Dj-сетів з найкращими резидентами мережі L`Kafa CAfe,  неординарних шоу-програм, шалених перфомансів та незабутніх емоцій у веселій компанії! Для любителів бару тут справній рай, місця багато і вистачить на всіх охочих посидіти  з друзями, завести нові знайомства! А для бажаючих поспілкуватись в легкій інтимній атмосфері є найзатишніші віддалені місця на 1-му та 2-му поверсі!
-                    L`Kafa Cafe Lounge Dance Karaoke – яскравий та стильний відпочинок у вишуканій атмосферіL`Kafa Dance Karaoke Hall (2-й поверх)  - це територія яскравих караоке-вечірок та Dj-сетів з найкращими резидентами мережі L`Kafa CAfe,  неординарних шоу-програм, шалених перфомансів та незабутніх емоцій у веселій компанії! Для любителів бару тут справній рай, місця багато і вистачить на всіх охочих посидіти  з друзями, завести нові знайомства! А для бажаючих поспілкуватись в легкій інтимній атмосфері є найзатишніші віддалені місця на 1-му та 2-му поверсі!
-                    L`Kafa Cafe Lounge Dance Karaoke – яскравий та стильний відпочинок у вишуканій атмосфері.</p>
+                <p id="inf-text">
+                    <%=institution.getAboutInstitution()%>
+                </p>
             </div>
         </div>
     </div>

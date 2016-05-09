@@ -12,7 +12,6 @@ public class InstitutionController {
 
     @RequestMapping(value="/institution")
     public String institution(HttpServletRequest request) {
-        String id = request.getParameter("id");
         return "institution";
     }
 

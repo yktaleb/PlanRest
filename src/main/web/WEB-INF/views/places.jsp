@@ -6,7 +6,7 @@
 <%@ page import="java.io.ByteArrayInputStream" %>
 <%@ page import="java.io.InputStream" %>
 <%@ page import="java.util.Enumeration" %>
-<%@ page import="com.planrest.util.SelectedInstitutionList" %>
+<%@ page import="com.planrest.util.*" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html lang="en">
@@ -54,6 +54,27 @@
                         parameterValue = Integer.valueOf(request.getParameter(parameterName));
                         SelectedInstitutionList selectedInstitutionList = new SelectedInstitutionList(parameterName, parameterValue);
                         allInstitution = selectedInstitutionList.getInstitutions();
+
+                        String title = selectedInstitutionList.getTitle();
+                        String name = null;
+                        switch (title) {
+                            case "Тип":
+                                name = TypeList.getTypeList().get(parameterValue);
+                                break;
+                            case "Кухня":
+                                name = KitchenList.getKitchenList().get(parameterValue);
+                                break;
+                            case "Район":
+                                name = RegionList.getRegionList().get(parameterValue);
+                                break;
+                            case "Услуги":
+                                name = ServiceList.getServiceList().get(parameterValue);
+                                break;
+
+                        }
+            %>
+                        <h1><%=title%>: <%=name%></h1>
+            <%
                     } catch (NumberFormatException e) {
                         allInstitution = null;
                     }
@@ -72,29 +93,30 @@
                 } else if (allInstitution.size() == 0) {
             %>
 
-            <h1>Ничего не найдено...</h1>
+            <h2>По запросу ничего не найдено...</h2>
 
             <%
                 } else {
                     for (Institution institution : allInstitution) {
             %>
 
-
             <div class="card_of_place">
 
                 <div class="img_place">
-                    <img src="<%=request.getContextPath()%>/ShowImage?index=<%=institution.getId()%>" alt="">
+                    <a href="institution?institution_id=<%=institution.getId()%>">
+                        <img src="<%=request.getContextPath()%>/ShowImage?index=<%=institution.getId()%>" alt="">
+                    </a>
                 </div>
 
                 <div class="short_inf">
                     <div class="center">
                         <div class="inf">
                             <div class = "place_name">
-                                <b>Название:</b>
+                                <a href="institution?institution_id=<%=institution.getId()%>"><b>Название:</b></a>
                             </div>
 
                             <div class = "place_name" id="pl_nm">
-                                <%=institution.getName()%>
+                                <a href="institution?institution_id=<%=institution.getId()%>"><%=institution.getName()%></a>
                             </div>
                         </div>
 
