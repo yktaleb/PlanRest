@@ -7,6 +7,7 @@ import org.hibernate.Transaction;
 import org.hibernate.mapping.Column;
 import org.hibernate.mapping.Table;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public abstract class HibernatedDao<T extends Model> implements AbstractDao<T> {
@@ -98,7 +99,6 @@ public abstract class HibernatedDao<T extends Model> implements AbstractDao<T> {
         }
         return objects;
     }
-
 
 //    @Override
 //    public T getById(Class cl, Long id) {

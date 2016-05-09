@@ -2,6 +2,11 @@ package com.planrest;
 
 //import com.planrest.models.*;
 
+import com.planrest.dao.impl.KitchenDao;
+import com.planrest.dao.impl.ServiceDao;
+import com.planrest.dao.impl.TypeDao;
+import com.planrest.models.Institution;
+import com.planrest.models.Type;
 import com.planrest.util.KitchenList;
 import com.planrest.util.ServiceList;
 
@@ -280,13 +285,20 @@ public class Main {
 //        kitchenDao.addList(kitchens);
 
 
-        String[] words = {"ace", "boom", "crew", "dog", "eon"};
+//        KitchenDao typeDao = new KitchenDao();
+////        for (Type type : typeDao.getAllType()) {
+////            System.out.println(type.getInstitution().getName());
+////        }
+//        List<Institution> institutions = typeDao.getAllInstitutionByTypeTitle("");
+//        for (Institution institution : institutions) {
+//            System.out.println(institution.getName());
+//        }
+//
+//        System.out.println(institutions.size());
 
-        List<String> wordList = Arrays.asList(words);
-
-        for (String e : wordList)
-        {
-            System.out.println(e);
+        ArrayList<Type> types = null;
+        if (types == null) {
+            System.out.println("yes");
         }
 
     }

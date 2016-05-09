@@ -208,7 +208,7 @@
         <%--</div>--%>
 
         <div class="col_1">
-            <a class="a opened" href="places?region_id=0>">Голосеевский</a>
+            <a class="a opened" href="places?region_id=0">Голосеевский</a>
             <a class="a opened" href="places?region_id=1">Дарницкий</a>
             <a class="a opened" href="places?region_id=2">Деснянский </a>
             <a class="a opened" href="places?region_id=3">Днепровский</a>

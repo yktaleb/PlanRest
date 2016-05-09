@@ -11,4 +11,14 @@ public class InstitutionDao extends HibernatedDao<Institution> {
         return getAll(Institution.class);
     }
 
+    public Institution getInstitutionById(Long id) {
+        Institution institution = null;
+        for (Institution object : getAllInstitution()) {
+            if (id == object.getId()) {
+                institution = object;
+            }
+        }
+        return institution;
+    }
+
 }

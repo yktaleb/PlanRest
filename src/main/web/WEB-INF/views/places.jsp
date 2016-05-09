@@ -6,6 +6,7 @@
 <%@ page import="java.io.ByteArrayInputStream" %>
 <%@ page import="java.io.InputStream" %>
 <%@ page import="java.util.Enumeration" %>
+<%@ page import="com.planrest.util.SelectedInstitutionList" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html lang="en">
@@ -36,18 +37,53 @@
         <div class="list_of_places">
 
             <%
+                List<Institution> allInstitution = null;
 
-                InstitutionDao institutionDao = new InstitutionDao();
-                List<Institution> allInstitution = institutionDao.getAllInstitution();
-                session.setAttribute("listOfAllInstitution", allInstitution);
-                for (Institution institution : allInstitution) {
+                Enumeration<String> names = request.getParameterNames();
+                int len = 0;
+                while (names.hasMoreElements()) {
+                    names.nextElement();
+                    len++;
+                }
+
+                Enumeration<String> parameterNames = request.getParameterNames();
+                if (parameterNames.hasMoreElements() && len==1) {
+                    String parameterName = parameterNames.nextElement();
+                    int parameterValue = 0;
+                    try {
+                        parameterValue = Integer.valueOf(request.getParameter(parameterName));
+                        SelectedInstitutionList selectedInstitutionList = new SelectedInstitutionList(parameterName, parameterValue);
+                        allInstitution = selectedInstitutionList.getInstitutions();
+                    } catch (NumberFormatException e) {
+                        allInstitution = null;
+                    }
+
+                } else if (len == 0){
+                    InstitutionDao institutionDao = new InstitutionDao();
+                    allInstitution = institutionDao.getAllInstitution();
+                }
+
+                if (allInstitution == null || len > 1) {
+            %>
+
+            <h1>Страница не найдена...</h1>
+
+            <%
+                } else if (allInstitution.size() == 0) {
+            %>
+
+            <h1>Ничего не найдено...</h1>
+
+            <%
+                } else {
+                    for (Institution institution : allInstitution) {
             %>
 
 
             <div class="card_of_place">
 
                 <div class="img_place">
-                    <img src="<%=request.getContextPath()%>/ShowImage?index=<%=allInstitution.indexOf(institution)%>" alt="">
+                    <img src="<%=request.getContextPath()%>/ShowImage?index=<%=institution.getId()%>" alt="">
                 </div>
 
                 <div class="short_inf">
@@ -99,6 +135,7 @@
             </div>
 
             <%
+                    }
                 }
             %>
 

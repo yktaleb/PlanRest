@@ -39,12 +39,11 @@ public class ShowImage extends HttpServlet {
         response.setContentType("image/jpeg");  
         OutputStream out = response.getOutputStream();  
         try {
-            System.out.println("");
-            int index = Integer.valueOf(request.getParameter("index"));
+            long index = Long.valueOf(request.getParameter("index"));
 
             InstitutionDao institutionDao = new InstitutionDao();
-            List allInstitution = (List) request.getSession().getAttribute("listOfAllInstitution");
-            Institution institution = (Institution) allInstitution.get(index);
+            Institution institution = institutionDao.getInstitutionById(index);
+
             response.setContentLength(institution.getAvatar().length);
             out.write(institution.getAvatar());
         } finally {
