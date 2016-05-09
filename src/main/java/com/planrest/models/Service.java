@@ -14,6 +14,11 @@ public class Service extends Model{
         super(id);
     }
 
+    public Service(String title, Institution institution) {
+        this.title = title;
+        this.institution = institution;
+    }
+
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "id", nullable = false)

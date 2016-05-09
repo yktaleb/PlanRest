@@ -14,9 +14,9 @@ public class PhotosInstitution extends Model{
         super(id);
     }
 
-    public PhotosInstitution(int institutionId, byte[] photo) {
-        this.institutionId = institutionId;
+    public PhotosInstitution(byte[] photo, Institution institution) {
         this.photo = photo;
+        this.institution = institution;
     }
 
 
@@ -25,19 +25,12 @@ public class PhotosInstitution extends Model{
     @Column(name = "id", nullable = false)
     private Long id;
 
-    @Column(name = "institution_id", nullable = false)
-    private int institutionId;
-
     @Column(name = "photo", nullable = false)
     private byte[] photo;
 
-    public int getInstitutionId() {
-        return institutionId;
-    }
-
-    public void setInstitutionId(int institutionId) {
-        this.institutionId = institutionId;
-    }
+    @ManyToOne
+    @JoinColumn(name = "Institution_id", nullable = false)
+    private Institution institution;
 
     public byte[] getPhoto() {
         return photo;

@@ -61,6 +61,12 @@ public class Institution extends Model{
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "institution")
     private List<Type> types;
 
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "institution")
+    private List<PhotosInstitution> photosInstitutions;
+
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "institution")
+    private List<Affiche> afficheList;
+
     public Long getId() {
         return id;
     }

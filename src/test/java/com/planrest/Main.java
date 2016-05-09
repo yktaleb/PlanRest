@@ -5,6 +5,10 @@ package com.planrest;
 import com.planrest.util.KitchenList;
 import com.planrest.util.ServiceList;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+
 public class Main {
     public static void main(String[] args) {
 //        Profile yarik = new Profile("1348", "yarik@gmail.com", "man", "Yarik", "Taleb");
@@ -276,9 +280,13 @@ public class Main {
 //        kitchenDao.addList(kitchens);
 
 
-//        ServiceList kitchenList = new ServiceList();
-        for (String s : KitchenList.getAllTitle()) {
-            System.out.println(s);
+        String[] words = {"ace", "boom", "crew", "dog", "eon"};
+
+        List<String> wordList = Arrays.asList(words);
+
+        for (String e : wordList)
+        {
+            System.out.println(e);
         }
 
     }

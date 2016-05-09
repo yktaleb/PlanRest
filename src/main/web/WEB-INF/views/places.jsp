@@ -36,11 +36,6 @@
         <div class="list_of_places">
 
             <%
-                Enumeration enumeration = request.getParameterNames();
-//                if (enumeration.nextElement() != null) {
-//                    String parameterName = (String) enumeration.nextElement();
-//                }
-                System.out.println(enumeration.nextElement().toString());
 
                 InstitutionDao institutionDao = new InstitutionDao();
                 List<Institution> allInstitution = institutionDao.getAllInstitution();

@@ -19,6 +19,7 @@ body {
     padding: 15px;
     border-radius: 15px;
     min-width: 800px;
+    overflow: hidden;
 }
 
 label{
@@ -98,6 +99,8 @@ textarea{
     margin-top: 1px; /* граница оболочки */
     left: -1px;
     right: -1px;
+    height: 350px;
+    overflow: auto;
 
     /* Стили */
     background: white;
@@ -184,62 +187,20 @@ textarea{
 
 /*2*/
 
-.delivery_block{
+.region_list{
     display: inline-block;
-    width: 415px;
-    padding: 5px 0 0;
-    color: #8c8c8c;
-    /*font-size: 11px;*/
+    width: 40%;
+    height: auto;
+    /*background-color: #9C27B0;*/
 }
-.delivery_block .delivery_list {
-    padding: 3px 6px 0 6px;
-    height: 22px;
-    cursor: pointer;
-    border-radius: 4px;
-    margin: 0 20px 0 0;
-    color: #000000;
-    border: 1px solid #efefef;
-    width: 415px;
-    background: #fcfcfc;
-    position: relative;
-    z-index: 75;
-}
-.delivery_list #btn {
-    background: url(dropdown.png);
-    width: 17px;
-    height: 18px;
-    float: right;
-}
-.delivery_list span {
-    padding: 2px 0 0 2px;
-    display: block;
-    font-weight: bold;
-}
-.delivery_block ul.cities_list {
-    margin-top: 0px;
-    z-index: 10;
-    background: #fcfcfc;
-    position: absolute;
-    border-radius: 3px;
-    width: 425px;
-    padding: 0;
-    border: 1px solid #eee;
-    display: none;
-    position: relative;
-    z-index: 75;
-}
-ul.cities_list li {
-    padding: 6px 9px;
+
+ol{
     list-style-type: none;
-    border-top: 1px solid #efefef;
 }
-ul.cities_list li:hover {
-    cursor: pointer;
-    background: #fff;
-}
-.delivery_block .delivery_text {
-    padding: 3px 5px;
-    margin: 5px 0 0 3px;
+
+.rg_list input{
+    width: 15px;
+    display: inline-block;
 }
 
 
@@ -281,6 +242,8 @@ ul.cities_list li:hover {
     margin-top: 1px; /* граница оболочки */
     left: -1px;
     right: -1px;
+    height: 350px;
+    overflow: auto;
 
     /* Стили */
     background: white;
@@ -393,6 +356,8 @@ ul.cities_list li:hover {
     margin-top: 1px; /* граница оболочки */
     left: -1px;
     right: -1px;
+    height: 350px;
+    overflow: auto;
 
     /* Стили */
     background: white;

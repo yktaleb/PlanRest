@@ -14,6 +14,11 @@ public class Type extends Model{
         super(id);
     }
 
+    public Type(String title, Institution institution) {
+        this.title = title;
+        this.institution = institution;
+    }
+
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "id", nullable = false)
