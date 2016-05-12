@@ -7,6 +7,7 @@ public class KitchenList {
     private static ArrayList<String> kitchenList = new ArrayList<String>();
 
     static {
+        kitchenList.add("Nothing");
         kitchenList.add("Австрийская");
         kitchenList.add("Авторская");
         kitchenList.add("Азербайджанская");

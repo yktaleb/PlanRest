@@ -25,4 +25,14 @@ public class KitchenDao  extends HibernatedDao<Kitchen> {
         }
         return institutions;
     }
+
+    public ArrayList<String> getKitchenListByInstitutionId(Long institutionId) {
+        ArrayList<String> kitchens = new ArrayList<String>();
+        for (Kitchen kitchen : getAllKitchen()) {
+            if (kitchen.getInstitution().getId().equals(institutionId)) {
+                kitchens.add(kitchen.getTitle());
+            }
+        }
+        return kitchens;
+    }
 }

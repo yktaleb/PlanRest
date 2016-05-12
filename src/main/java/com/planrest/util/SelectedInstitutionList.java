@@ -14,49 +14,59 @@ public class SelectedInstitutionList {
     private String title;
 
     public SelectedInstitutionList(String parameterName, int parameterValue) {
-        try {
-            switch (parameterName) {
-                case "type_id" :
-                    TypeList typeList = new TypeList();
-                    TypeDao typeDao = new TypeDao();
-
-                    title = "Тип";
-
-                    institutions = typeDao.getAllInstitutionByTypeTitle(typeList.getTypeList().get(parameterValue));
+        switch (parameterName) {
+            case "type_id":
+                TypeList typeList = new TypeList();
+                if (parameterValue > typeList.getTypeList().size() || parameterValue <= 0)
                     break;
-                case "kitchen_id" :
-                    KitchenList kitchenList = new KitchenList();
-                    KitchenDao kitchenDao = new KitchenDao();
 
-                    title = "Кухня";
+                TypeDao typeDao = new TypeDao();
 
-                    institutions = kitchenDao.getAllInstitutionByTypeTitle(kitchenList.getKitchenList().get(parameterValue));
+                title = "Тип";
+
+                institutions = typeDao.getAllInstitutionByTypeTitle(typeList.getTypeList().get(parameterValue));
+                break;
+            case "kitchen_id":
+                KitchenList kitchenList = new KitchenList();
+
+                if (parameterValue > kitchenList.getKitchenList().size() || parameterValue <= 0)
                     break;
-                case "region_id" :
-                    RegionList regionList = new RegionList();
-                    InstitutionDao institutionDao = new InstitutionDao();
-                    institutions = new ArrayList<Institution>();
 
-                    title = "Район";
+                KitchenDao kitchenDao = new KitchenDao();
 
-                    String region = regionList.getRegionList().get(parameterValue);
-                    for (Institution institution : institutionDao.getAllInstitution()) {
-                        if (institution.getRegion().equals(region)) {
-                            institutions.add(institution);
-                        }
+                title = "Кухня";
+
+                institutions = kitchenDao.getAllInstitutionByTypeTitle(kitchenList.getKitchenList().get(parameterValue));
+                break;
+            case "region_id":
+                RegionList regionList = new RegionList();
+                if (parameterValue > regionList.getRegionList().size() || parameterValue < 0)
+                    break;
+
+                InstitutionDao institutionDao = new InstitutionDao();
+                institutions = new ArrayList<Institution>();
+
+                title = "Район";
+
+                String region = regionList.getRegionList().get(parameterValue);
+                for (Institution institution : institutionDao.getAllInstitution()) {
+                    if (institution.getRegion().equals(region)) {
+                        institutions.add(institution);
                     }
+                }
 
+                break;
+            case "service_id":
+                ServiceList serviceList = new ServiceList();
+                if (parameterValue > serviceList.getServiceList().size() || parameterValue <= 0)
                     break;
-                case "service_id" :
-                    ServiceList serviceList = new ServiceList();
-                    ServiceDao serviceDao = new ServiceDao();
 
-                    title = "Услуги";
+                ServiceDao serviceDao = new ServiceDao();
 
-                    institutions = serviceDao.getAllInstitutionByTypeTitle(serviceList.getServiceList().get(parameterValue));
-                    break;
-            }
-        } catch (Exception e) {
+                title = "Услуги";
+
+                institutions = serviceDao.getAllInstitutionByTypeTitle(serviceList.getServiceList().get(parameterValue));
+                break;
         }
     }
 

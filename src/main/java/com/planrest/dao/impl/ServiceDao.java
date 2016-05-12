@@ -2,6 +2,7 @@ package com.planrest.dao.impl;
 
 import com.planrest.dao.HibernatedDao;
 import com.planrest.models.Institution;
+import com.planrest.models.Kitchen;
 import com.planrest.models.Service;
 
 import java.util.ArrayList;
@@ -22,5 +23,15 @@ public class ServiceDao extends HibernatedDao<Service> {
             }
         }
         return institutions;
+    }
+
+    public ArrayList<String> getServiceListByInstitutionId(Long institutionId) {
+        ArrayList<String> services = new ArrayList<String>();
+        for (Service service : getAllService()) {
+            if (service.getInstitution().getId().equals(institutionId)) {
+                services.add(service.getTitle());
+            }
+        }
+        return services;
     }
 }

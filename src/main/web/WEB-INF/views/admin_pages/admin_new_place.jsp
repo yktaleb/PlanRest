@@ -220,7 +220,7 @@
                             <li><input type="radio" name="region" value="Подольский" /> <label for="region">Подольский</label></li>
                             <li><input type="radio" name="region" value="Святошинский" /> <label for="region">Святошинский</label></li>
                             <li><input type="radio" name="region" value="Соломенский" /> <label for="region">Соломенский</label></li>
-                            <li><input type="radio" name="region" value="Шевченковсий" /> <label for="region">Шевченковский</label></li>
+                            <li><input type="radio" name="region" value="Шевченковский" /> <label for="region">Шевченковский</label></li>
                         </ol>
                     </div>
 

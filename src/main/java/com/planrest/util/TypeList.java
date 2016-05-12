@@ -7,6 +7,7 @@ public class TypeList {
     private static ArrayList<String> typeList = new ArrayList<String>();
 
     static {
+        typeList.add("Nothing");
         typeList.add("Арт-кафе");
         typeList.add("Банкетный зал");
         typeList.add("Баня");

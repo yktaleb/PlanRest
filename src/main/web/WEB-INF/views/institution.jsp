@@ -1,5 +1,8 @@
-<%@ page import="com.planrest.dao.impl.InstitutionDao" %>
 <%@ page import="com.planrest.models.Institution" %>
+<%@ page import="java.util.ArrayList" %>
+<%@ page import="com.planrest.models.Affiche" %>
+<%@ page import="com.planrest.dao.impl.*" %>
+<%@ page import="com.planrest.models.PhotosInstitution" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <!DOCTYPE>
@@ -14,8 +17,17 @@
 <%@include file="jspf/top_menu.jspf" %>
 
 <%
+    long institutionId = Long.valueOf(request.getParameter("institution_id"));
+
     InstitutionDao institutionDao = new InstitutionDao();
-    Institution institution = institutionDao.getInstitutionById(Long.valueOf(request.getParameter("institution_id")));
+    Institution institution = institutionDao.getInstitutionById(institutionId);
+
+    KitchenDao kitchenDao = new KitchenDao();
+    ArrayList<String> kitchens = kitchenDao.getKitchenListByInstitutionId(institutionId);
+
+    ServiceDao serviceDao = new ServiceDao();
+    ArrayList<String> services = serviceDao.getServiceListByInstitutionId(institutionId);
+
 
 %>
 
@@ -26,7 +38,7 @@
     <div id="block-with-information">
         <!-- Блок в котором размещается логотим заведения -->
         <div class="information-block" id="logo">
-            <img src="logo1.jpg" id="logo-img">
+            <img src="<%=request.getContextPath()%>/ShowInstitutionLogo?index=<%=institution.getId()%>" id="logo-img">
         </div>
         <!-- Блок в котором размещается мнформация о заведении -->
         <div class="information-block" id="list-of-information">
@@ -74,17 +86,41 @@
 
             <div class="inf">
                 <div class = "inf-kitchen"><b>Кухня:</b></div>
-                <div class = "inf-kitchen" id="kitchen">Европейская, восточная, американская </div>
+                <div class = "inf-kitchen" id="kitchen">
+                    <%
+                        for (int i = 0; i < kitchens.size(); i++) {
+                    %>
+                            <%=kitchens.get(i)%>
+                            <%if (!(i == kitchens.size()-1)) {
+                    %>
+                            <%=", "%>
+                    <%
+                            }%>
+                    <%
+                        }%>
+                </div>
             </div>
 
             <div class="inf">
                 <div class = "inf-services"><b>Сервис:</b></div>
-                <div class = "inf-services" id="services">WI-FI, кальян, караоке, живая музыка, </div>
+                <div class = "inf-services" id="services">
+                    <%
+                        for (int i = 0; i < services.size(); i++) {
+                    %>
+                            <%=services.get(i)%>
+                            <%if (!(i == services.size()-1)) {
+                    %>
+                                <%=", "%>
+                    <%
+                            }%>
+                    <%
+                        }%>
+                </div>
             </div>
 
             <div class="inf">
                 <div class = "inf-site"><b>Сайт:</b></div>
-                <div class = "inf-site" id="site"><a href="http://lkafa-cafe.com.ua/" target="_blank"> <%=institution.getLinkInstitution()%></a></div>
+                <div class = "inf-site" id="site"><a href="<%=institution.getLinkInstitution()%>" target="_blank"> <%=institution.getLinkInstitution()%></a></div>
             </div>
 
             <div class="inf">
@@ -98,40 +134,40 @@
         </div>
     </div>
 
-
     <!-- Афиша заведения -->
     <div id="photos"><h3>Фото заведения</h3></div>
     <!-- Колонки с афишами(картинками) -->
     <div class="layout1">
-        <div class="col1">
-            <a href="" id="tab1"><img src="lkafa2.jpg" alt="" title="" /></a>
-            <!-- <img src="lkafa2.jpg"> -->
-        </div>
-        <div class="col2">
-            <a href="" id="tab1"><img src="lkafa3.jpg" alt="" title="" /></a>
-            <!-- <img src="lkafa3.jpg"> -->
-        </div>
-        <div class="col3">
-            <a href="" id="tab1"><img src="lkafa4.jpg" alt="" title="" /></a>
-            <!-- <img src="lkafa4.jpg"> -->
-        </div>
+        <%
+            PhotosInstitutionDao photosInstitutionDao = new PhotosInstitutionDao();
+            for (PhotosInstitution photosInstitution : photosInstitutionDao.getPhotosInstitutionListByInstitutionId(institutionId)) {
+        %>
+                <div class="col">
+                    <a><img src="<%=request.getContextPath()%>/ShowInstitutionPhotoInstitution?index=<%=photosInstitution.getId()%>" alt="" title="" /></a>
+                </div>
+        <%
+            }
+        %>
     </div>
 
     <!-- Афиша заведения -->
     <div id="afisha"><h3>Афиша</h3></div>
     <!-- Колонки с афишами(картинками) -->
     <div class="layout">
-        <div class="col1">
-            <img src="afisha1.jpg">
+    <%
+        AfficheDao afficheDao = new AfficheDao();
+        for (Affiche affiche : afficheDao.getAfficheListByInstitutionId(institutionId)) {
+    %>
+        <div class="col">
+            <img src="<%=request.getContextPath()%>/ShowInstitutionAffiche?index=<%=affiche.getId()%>">
         </div>
-        <div class="col2">
-            <img src="afisha2.jpg">
-        </div>
-        <div class="col3">
-            <img src="afisha3.jpg">
-            <a href="#win1" class="button">Стать участником</a>
-        </div>
+     <%
+        }
+    %>
     </div>
+
+    <a href="#win1" class="button">Стать участником</a>
+
     <!-- Всплівающее окно для заполнения заявки на посищение -->
     <a href="#x" class="overlay" id="win1"></a>
     <div class="popup">

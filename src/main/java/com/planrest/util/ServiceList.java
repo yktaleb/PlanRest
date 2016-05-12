@@ -7,6 +7,7 @@ public class ServiceList {
     private static ArrayList<String> serviceList = new ArrayList<String>();
 
     static {
+        serviceList.add("Nothing");
         serviceList.add("Wi-Fi");
         serviceList.add("А-ля Фуршет");
         serviceList.add("Баня");

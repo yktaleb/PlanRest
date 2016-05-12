@@ -262,19 +262,11 @@ body {
     float: left;
 }
 
-.col1 {
+.col {
     /*background: #C7E3E4; */
     width: 33%;
 }
 
-.col2 {
-    /*background: #E0D2C7; */
-    width: 33%; }
-
-.col3 {
-    /*background: #ECD5DE; */
-    width: 33%;
-}
 
 .layout img{
     display:block;

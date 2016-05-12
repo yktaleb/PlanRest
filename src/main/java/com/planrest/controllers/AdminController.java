@@ -153,17 +153,21 @@ public class AdminController {
 
         institutionDao.add(institution);
 
-        ArrayList<Type> typeList = new ArrayList<Type>();
-        for (String type : types) {
-            typeList.add(new Type(type, institution));
+        if (!types[0].equals("Nothing")) {
+            ArrayList<Type> typeList = new ArrayList<Type>();
+            for (String type : types) {
+                typeList.add(new Type(type, institution));
+            }
+            typeDao.addList(typeList);
         }
-        typeDao.addList(typeList);
 
-        ArrayList<Kitchen> kitchenList = new ArrayList<Kitchen>();
-        for (String kitchen : kitchens) {
-            kitchenList.add(new Kitchen(kitchen, institution));
+        if (!kitchens[0].equals("Nothing")) {
+            ArrayList<Kitchen> kitchenList = new ArrayList<Kitchen>();
+            for (String kitchen : kitchens) {
+                kitchenList.add(new Kitchen(kitchen, institution));
+            }
+            kitchenDao.addList(kitchenList);
         }
-        kitchenDao.addList(kitchenList);
 
         ArrayList<Service> serviceList = new ArrayList<Service>();
         for (String service : services) {

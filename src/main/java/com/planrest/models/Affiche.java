@@ -47,6 +47,11 @@ public class Affiche extends Model{
         this.id = id;
     }
 
+    public Institution getInstitution() {
+        return institution;
+    }
 
-
+    public void setInstitution(Institution institution) {
+        this.institution = institution;
+    }
 }

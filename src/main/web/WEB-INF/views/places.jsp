@@ -55,27 +55,31 @@
                         SelectedInstitutionList selectedInstitutionList = new SelectedInstitutionList(parameterName, parameterValue);
                         allInstitution = selectedInstitutionList.getInstitutions();
 
-                        String title = selectedInstitutionList.getTitle();
-                        String name = null;
-                        switch (title) {
-                            case "Тип":
-                                name = TypeList.getTypeList().get(parameterValue);
-                                break;
-                            case "Кухня":
-                                name = KitchenList.getKitchenList().get(parameterValue);
-                                break;
-                            case "Район":
-                                name = RegionList.getRegionList().get(parameterValue);
-                                break;
-                            case "Услуги":
-                                name = ServiceList.getServiceList().get(parameterValue);
-                                break;
+                        if (allInstitution != null) {
 
-                        }
+                            String title = selectedInstitutionList.getTitle();
+                            String name = null;
+                            switch (title) {
+                                case "Тип":
+                                    name = TypeList.getTypeList().get(parameterValue);
+                                    break;
+                                case "Кухня":
+                                    name = KitchenList.getKitchenList().get(parameterValue);
+                                    break;
+                                case "Район":
+                                    name = RegionList.getRegionList().get(parameterValue);
+                                    break;
+                                case "Услуги":
+                                    name = ServiceList.getServiceList().get(parameterValue);
+                                    break;
+
+                            }
+
             %>
-                        <h1><%=title%>: <%=name%></h1>
+                            <h1><%=title%>: <%=name%></h1>
             <%
-                    } catch (NumberFormatException e) {
+                        }
+                    } catch (Exception e) {
                         allInstitution = null;
                     }
 
@@ -104,7 +108,7 @@
 
                 <div class="img_place">
                     <a href="institution?institution_id=<%=institution.getId()%>">
-                        <img src="<%=request.getContextPath()%>/ShowImage?index=<%=institution.getId()%>" alt="">
+                        <img src="<%=request.getContextPath()%>/ShowInstitutionLogo?index=<%=institution.getId()%>" alt="">
                     </a>
                 </div>
 

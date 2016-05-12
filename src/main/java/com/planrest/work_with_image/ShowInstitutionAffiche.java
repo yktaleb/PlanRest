@@ -4,25 +4,23 @@
  */
 package com.planrest.work_with_image;
 
-import java.awt.image.BufferedImage;
-import java.io.IOException;
-import java.io.OutputStream;
-import java.util.ArrayList;
-import java.util.List;
-import javax.imageio.ImageIO;
+import com.planrest.dao.impl.AfficheDao;
+import com.planrest.dao.impl.InstitutionDao;
+import com.planrest.models.Affiche;
+import com.planrest.models.Institution;
+
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-
-import com.planrest.dao.impl.InstitutionDao;
-import com.planrest.models.Institution;
+import java.io.IOException;
+import java.io.OutputStream;
 
 /**
  *
  * @author Tim
  */
-public class ShowImage extends HttpServlet {
+public class ShowInstitutionAffiche extends HttpServlet {
 
     /**
      * Processes requests for both HTTP
@@ -41,11 +39,11 @@ public class ShowImage extends HttpServlet {
         try {
             long index = Long.valueOf(request.getParameter("index"));
 
-            InstitutionDao institutionDao = new InstitutionDao();
-            Institution institution = institutionDao.getInstitutionById(index);
+            AfficheDao afficheDao = new AfficheDao();
+            Affiche affiche = afficheDao.getAfficheById(index);
 
-            response.setContentLength(institution.getAvatar().length);
-            out.write(institution.getAvatar());
+            response.setContentLength(affiche.getPhoto().length);
+            out.write(affiche.getPhoto());
         } finally {
             out.close();
         }

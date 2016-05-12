@@ -16,12 +16,30 @@
     </context-param>
 
     <servlet>
-        <servlet-name>ShowImage</servlet-name>
-        <servlet-class>com.planrest.work_with_image.ShowImage</servlet-class>
+        <servlet-name>ShowInstitutionLogo</servlet-name>
+        <servlet-class>com.planrest.work_with_image.ShowInstitutionLogo</servlet-class>
     </servlet>
     <servlet-mapping>
-        <servlet-name>ShowImage</servlet-name>
-        <url-pattern>/ShowImage</url-pattern>
+        <servlet-name>ShowInstitutionLogo</servlet-name>
+        <url-pattern>/ShowInstitutionLogo</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>ShowInstitutionAffiche</servlet-name>
+        <servlet-class>com.planrest.work_with_image.ShowInstitutionAffiche</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ShowInstitutionAffiche</servlet-name>
+        <url-pattern>/ShowInstitutionAffiche</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>ShowInstitutionPhotoInstitution</servlet-name>
+        <servlet-class>com.planrest.work_with_image.ShowInstitutionPhotoInstitution</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ShowInstitutionPhotoInstitution</servlet-name>
+        <url-pattern>/ShowInstitutionPhotoInstitution</url-pattern>
     </servlet-mapping>
 
 

@@ -106,7 +106,7 @@
     <div class="type_body">
         <div class="col_1">
             <%
-                for (int i = 0; i < 16; i++) {
+                for (int i = 1; i < 17; i++) {
             %>
             <a class="a opened" href="places?type_id=<%=i%>"><%=typeTitles.get(i)%></a>
             <%
@@ -116,7 +116,7 @@
 
         <div class="col_2">
             <%
-                for (int i = 16; i < 32; i++) {
+                for (int i = 17; i < 33; i++) {
             %>
             <a class="a opened" href="places?type_id=<%=i%>"><%=typeTitles.get(i)%></a>
             <%
@@ -126,7 +126,7 @@
 
         <div class="col_3">
             <%
-                for (int i = 32; i < 48; i++) {
+                for (int i = 33; i < 49; i++) {
             %>
             <a class="a opened" href="places?type_id=<%=i%>"><%=typeTitles.get(i)%></a>
             <%
@@ -135,7 +135,7 @@
         </div>
         <div class="col_4">
             <%
-                for (int i = 48; i < typeTitles.size(); i++) {
+                for (int i = 49; i < typeTitles.size(); i++) {
             %>
             <a class="a opened" href="places?type_id=<%=i%>"><%=typeTitles.get(i)%></a>
             <%
@@ -153,7 +153,7 @@
     <div class="kitchen_body">
         <div class="col_1">
             <%
-                for (int i = 0; i < 16; i++) {
+                for (int i = 1; i < 17; i++) {
             %>
             <a class="a opened" href="places?kitchen_id=<%=i%>"><%=kitchenTitles.get(i)%></a>
             <%
@@ -163,7 +163,7 @@
 
         <div class="col_2">
             <%
-                for (int i = 16; i < 32; i++) {
+                for (int i = 17; i < 33; i++) {
             %>
             <a class="a opened" href="places?kitchen_id=<%=i%>"><%=kitchenTitles.get(i)%></a>
             <%
@@ -173,7 +173,7 @@
 
         <div class="col_3">
             <%
-                for (int i = 32; i < 48; i++) {
+                for (int i = 33; i < 49; i++) {
             %>
             <a class="a opened" href="places?kitchen_id=<%=i%>"><%=kitchenTitles.get(i)%></a>
             <%
@@ -182,7 +182,7 @@
         </div>
         <div class="col_4">
             <%
-                for (int i = 48; i < kitchenTitles.size(); i++) {
+                for (int i = 49; i < kitchenTitles.size(); i++) {
             %>
             <a class="a opened" href="places?kitchen_id=<%=i%>"><%=kitchenTitles.get(i)%></a>
             <%
@@ -230,7 +230,7 @@
     <div class="service_body">
         <div class="col_1">
             <%
-                for (int i = 0; i < 16; i++) {
+                for (int i = 1; i < 17; i++) {
             %>
             <a class="a opened" href="places?service_id=<%=i%>"><%=serviceTitles.get(i)%></a>
             <%
@@ -240,7 +240,7 @@
 
         <div class="col_2">
             <%
-                for (int i = 16; i < 32; i++) {
+                for (int i = 17; i < 33; i++) {
             %>
             <a class="a opened" href="places?service_id=<%=i%>"><%=serviceTitles.get(i)%></a>
             <%
@@ -250,7 +250,7 @@
 
         <div class="col_3">
             <%
-                for (int i = 32; i < serviceTitles.size(); i++) {
+                for (int i = 33; i < serviceTitles.size(); i++) {
             %>
             <a class="a opened" href="places?service_id=<%=i%>"><%=serviceTitles.get(i)%></a>
             <%
