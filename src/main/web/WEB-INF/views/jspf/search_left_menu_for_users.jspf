@@ -1,0 +1,120 @@
+<%@ page pageEncoding="UTF-8" %>
+<!-- Это сккрипты для открытия и закрытия блоков с категориями -->
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
+
+<script type="text/javascript">
+    $(document).ready(function(){
+        $('.region_body').hide();
+        $('.region_title').click(function(){
+            $(this).toggleClass('opened').toggleClass('closed').next().slideToggle();
+            if($(this).hasClass('opened')) {
+                $(this).html('Район ▲');
+            }
+            else {
+                $(this).html('Район ▼');
+            }
+        });
+    });
+</script>
+
+<script type="text/javascript">
+    $(document).ready(function(){
+        $('.sp_body').hide();
+        $('.sp_title').click(function(){
+            $(this).toggleClass('opened').toggleClass('closed').next().slideToggle();
+            if($(this).hasClass('opened')) {
+                $(this).html('Семейное положение ▲');
+            }
+            else {
+                $(this).html('Семейное положение ▼');
+            }
+        });
+    });
+</script>
+
+<script type="text/javascript">
+    $(document).ready(function(){
+        $('.state_body').hide();
+        $('.state_title').click(function(){
+            $(this).toggleClass('opened').toggleClass('closed').next().slideToggle();
+            if($(this).hasClass('opened')) {
+                $(this).html('Пол ▲');
+            }
+            else {
+                $(this).html('Пол ▼');
+            }
+        });
+    });
+</script>
+
+<script type="text/javascript">
+    $(document).ready(function(){
+        $('.type_body').hide();
+        $('.a').click(function(){
+            $(this).toggleClass('opened').toggleClass('closed').next().slideToggle();
+
+        });
+    });
+</script>
+
+<div class="category_block">
+
+
+    <h3>Категории поиска:</h3>
+    <!-- Категория тип (Всплывающий список) -->
+    <b class="region_title closed">Район ▼</b>
+
+    <div class="region_body">
+        <div class="col_1">
+            <a class="a opened" href="users?region_id=0">Голосеевский</a>
+            <a class="a opened" href="users?region_id=1">Дарницкий</a>
+            <a class="a opened" href="users?region_id=2">Деснянский </a>
+            <a class="a opened" href="users?region_id=3">Днепровский</a>
+            <a class="a opened" href="users?region_id=4">Оболонский</a>
+            <a class="a opened" href="users?region_id=5">Печерский</a>
+            <a class="a opened" href="users?region_id=6">Подольский</a>
+            <a class="a opened" href="users?region_id=7">Святошинский</a>
+            <a class="a opened" href="users?region_id=8">Соломенский</a>
+            <a class="a opened" href="users?region_id=9">Шевченковский</a>
+
+        </div>
+    </div>
+
+    <br/><br/>
+
+    <div class="line"></div>
+
+    <!-- <b class="state">Пол</b>
+    <br/><br/>
+    <input type="radio" name="state" /> <label for="state">Мужской</label>
+    <br/><br/>
+    <input type="radio" name="state" /> <label for="state">Женский</label>
+    <br/><br/>
+    <input type="radio" name="state" checked="checked" /> <label for="state">Любой</label> -->
+    <b class="state_title closed">Пол ▼</b>
+
+    <div class="state_body">
+        <div class="col_1">
+            <a class="a opened" href="users?sex=0">Мужской</a>
+            <a class="a opened" href="users?sex=1">Женский</a>
+            <a class="a opened" href="users?sex=2">Любой</a>
+        </div>
+    </div>
+    <br/><br/>
+
+    <div class="line"></div>
+
+    <b class="sp_title closed">Семейное положение ▼</b>
+
+    <div class="sp_body">
+        <div class="col_1">
+            <a class="a opened" href="users?status_id=0">Не женат(а)</a>
+            <a class="a opened" href="users?status_id=1">Встречается</a>
+            <a class="a opened" href="users?status_id=2">Помолвлен(а)</a>
+            <a class="a opened" href="users?status_id=3">Женат(а)</a>
+            <a class="a opened" href="users?status_id=4">Влюблен(а)</a>
+            <a class="a opened" href="users?status_id=5">Все сложно</a>
+            <a class="a opened" href="users?status_id=6">В активном поиске</a>
+        </div>
+    </div>
+</div>

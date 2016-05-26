@@ -38,7 +38,12 @@
     <div id="block-with-information">
         <!-- Блок в котором размещается логотим заведения -->
         <div class="information-block" id="logo">
-            <img src="<%=request.getContextPath()%>/ShowInstitutionLogo?index=<%=institution.getId()%>" id="logo-img">
+            <%if (institution.getAvatar() == null) {
+            %>
+                <img src="/resources/images/camera_200.png" id="logo-img">
+            <%} else {%>
+                <img src="<%=request.getContextPath()%>/ShowInstitutionLogo?index=<%=institution.getId()%>" id="logo-img">
+            <%}%>
         </div>
         <!-- Блок в котором размещается мнформация о заведении -->
         <div class="information-block" id="list-of-information">
@@ -80,90 +85,162 @@
             </div>
 
             <div class="inf">
-                <div class = "inf-time-working"><b>Время работы:</b></div>
-                <div class = "inf-time-working" id="time-working"> <%=institution.getWorkingHours()%></div>
+                <%
+                    if (!institution.getWorkingHours().equals("")) {
+                %>
+                        <div class = "inf-time-working"><b>Время работы:</b></div>
+                        <div class = "inf-time-working" id="time-working">
+                            <%
+                                if (institution.getWorkingHours()==null)
+                            %>
+                            <%=institution.getWorkingHours()%>
+                        </div>
+                <%
+                    }
+                %>
+            </div>
+
+
+            <div class="inf">
+                <%
+                    if (kitchens.size() != 0) {
+                %>
+                        <div class = "inf-kitchen"><b>Кухня:</b></div>
+                        <div class = "inf-kitchen" id="kitchen">
+                            <%
+                                for (int i = 0; i < kitchens.size(); i++) {
+                            %>
+                                    <%=kitchens.get(i)%>
+                                    <%if (!(i == kitchens.size()-1)) {
+                            %>
+                                    <%=", "%>
+                            <%
+                                    }%>
+                            <%
+                                }%>
+                        </div>
+                <%
+                    }
+                %>
             </div>
 
             <div class="inf">
-                <div class = "inf-kitchen"><b>Кухня:</b></div>
-                <div class = "inf-kitchen" id="kitchen">
-                    <%
-                        for (int i = 0; i < kitchens.size(); i++) {
-                    %>
-                            <%=kitchens.get(i)%>
-                            <%if (!(i == kitchens.size()-1)) {
-                    %>
-                            <%=", "%>
-                    <%
-                            }%>
-                    <%
-                        }%>
-                </div>
+                <%
+                    if (services.size() != 0) {
+                %>
+                        <div class = "inf-services"><b>Сервис:</b></div>
+                        <div class = "inf-services" id="services">
+                            <%
+                                for (int i = 0; i < services.size(); i++) {
+                            %>
+                                    <%=services.get(i)%>
+                                    <%if (!(i == services.size()-1)) {
+                            %>
+                                        <%=", "%>
+                            <%
+                                    }%>
+                            <%
+                                }%>
+                        </div>
+                <%
+                    }
+                %>
             </div>
 
             <div class="inf">
-                <div class = "inf-services"><b>Сервис:</b></div>
-                <div class = "inf-services" id="services">
-                    <%
-                        for (int i = 0; i < services.size(); i++) {
-                    %>
-                            <%=services.get(i)%>
-                            <%if (!(i == services.size()-1)) {
-                    %>
-                                <%=", "%>
-                    <%
-                            }%>
-                    <%
-                        }%>
-                </div>
+                <%
+                    if (!institution.getLinkInstitution().equals("")) {
+                %>
+                        <div class = "inf-site"><b>Сайт:</b></div>
+                        <div class = "inf-site" id="site"><a href="<%=institution.getLinkInstitution()%>" target="_blank"> <%=institution.getLinkInstitution()%></a></div>
+
+                <%
+                    }
+                %>
             </div>
 
-            <div class="inf">
-                <div class = "inf-site"><b>Сайт:</b></div>
-                <div class = "inf-site" id="site"><a href="<%=institution.getLinkInstitution()%>" target="_blank"> <%=institution.getLinkInstitution()%></a></div>
-            </div>
 
             <div class="inf">
-                <div class = "inf-above-inst">
-                    <b>Описание:</b>
-                </div>
-                <p id="inf-text">
-                    <%=institution.getAboutInstitution()%>
-                </p>
+                <%
+                    if (!institution.getAboutInstitution().equals("")) {
+                %>
+                        <div class = "inf-above-inst">
+                            <b>Описание:</b>
+                        </div>
+                        <p id="inf-text">
+                            <%=institution.getAboutInstitution()%>
+                        </p>
+
+                <%
+                    }
+                %>
             </div>
         </div>
     </div>
 
     <!-- Афиша заведения -->
-    <div id="photos"><h3>Фото заведения</h3></div>
-    <!-- Колонки с афишами(картинками) -->
-    <div class="layout1">
+    <div id="photos">
         <%
             PhotosInstitutionDao photosInstitutionDao = new PhotosInstitutionDao();
-            for (PhotosInstitution photosInstitution : photosInstitutionDao.getPhotosInstitutionListByInstitutionId(institutionId)) {
+            ArrayList<PhotosInstitution> photosInstitution = photosInstitutionDao.getPhotosInstitutionListByInstitutionId(institutionId);
+            if (photosInstitution.size()!=0) {
         %>
-                <div class="col">
-                    <a><img src="<%=request.getContextPath()%>/ShowInstitutionPhotoInstitution?index=<%=photosInstitution.getId()%>" alt="" title="" /></a>
+                <h3>Фото заведения</h3></div>
+                <!-- Колонки с афишами(картинками) -->
+                <div class="layout1">
+                <%
+                    for (PhotosInstitution photoInstitution : photosInstitution) {
+                %>
+                        <div class="col">
+                            <a><img src="<%=request.getContextPath()%>/ShowInstitutionPhotoInstitution?index=<%=photoInstitution.getId()%>" alt="" title="" /></a>
+                        </div>
+                <%
+                    }
+                %>
+        <%
+            } else {
+        %>
                 </div>
+                <!-- Колонки с афишами(картинками) -->
+                <div class="layout1">
         <%
             }
         %>
+
+
     </div>
 
+
     <!-- Афиша заведения -->
-    <div id="afisha"><h3>Афиша</h3></div>
-    <!-- Колонки с афишами(картинками) -->
-    <div class="layout">
-    <%
-        AfficheDao afficheDao = new AfficheDao();
-        for (Affiche affiche : afficheDao.getAfficheListByInstitutionId(institutionId)) {
-    %>
-        <div class="col">
-            <img src="<%=request.getContextPath()%>/ShowInstitutionAffiche?index=<%=affiche.getId()%>">
-        </div>
-     <%
-        }
-    %>
+    <div id="afisha">
+        <%
+            AfficheDao afficheDao = new AfficheDao();
+            ArrayList<Affiche> affiches = afficheDao.getAfficheListByInstitutionId(institutionId);
+            if (affiches.size()!=0) {
+        %>
+            <h3>Афиша</h3></div>
+            <!-- Колонки с афишами(картинками) -->
+            <div class="layout">
+
+            <%
+                for (Affiche affiche : affiches) {
+            %>
+                <div class="col">
+                    <img src="<%=request.getContextPath()%>/ShowInstitutionAffiche?index=<%=affiche.getId()%>">
+                </div>
+             <%
+                }
+            %>
+
+        <%
+            } else {
+        %>
+                </div>
+                <!-- Колонки с афишами(картинками) -->
+                <div class="layout">
+        <%
+            }
+        %>
     </div>
 
     <a href="#win1" class="button">Стать участником</a>
@@ -171,6 +248,7 @@
     <!-- Всплівающее окно для заполнения заявки на посищение -->
     <a href="#x" class="overlay" id="win1"></a>
     <div class="popup">
+        <form method="GET"  action="admin_new_place_check" acceptCharset="UTF-8" >
         <h3>Запись на посещение заведения</h3>
         <p>Заполните указаные поля:</p>
         <br/>
@@ -187,6 +265,7 @@
             <input type="submit" class="submit"value="Отправить заявку" />
         </div>
         <a class="close" title="Закрыть" href="#close"></a>
+        </form>
     </div>
 
     <!-- Таблица запланированіх посищений -->

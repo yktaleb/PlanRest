@@ -94,14 +94,17 @@ public class Profile extends Model{
     @Column(name = "about_myself")
     private String aboutMyself;
 
+    @Column(name = "region")
+    private String region;
+
+    @Column(name = "city")
+    private String city;
+
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "profile")
     private List<PhotosProfile> photosProfiles;
 
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "profile")
     private List<Friend> friends;
-
-    @OneToOne(cascade = CascadeType.ALL, mappedBy = "friend")
-    private Friend friend;
 
     public Long getId() {
         return id;
@@ -247,13 +250,19 @@ public class Profile extends Model{
         this.friends = friends;
     }
 
-    public Friend getFriend() {
-        return friend;
+    public String getRegion() {
+        return region;
     }
 
-    public void setFriend(Friend friend) {
-        this.friend = friend;
+    public void setRegion(String region) {
+        this.region = region;
     }
 
+    public String getCity() {
+        return city;
+    }
 
+    public void setCity(String city) {
+        this.city = city;
+    }
 }

@@ -4,8 +4,10 @@
  */
 package com.planrest.work_with_image;
 
-import com.planrest.dao.impl.PhotosInstitutionDao;
-import com.planrest.models.PhotosInstitution;
+import com.planrest.dao.impl.AfficheDao;
+import com.planrest.dao.impl.ProfileDao;
+import com.planrest.models.Affiche;
+import com.planrest.models.Profile;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -14,7 +16,7 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.io.OutputStream;
 
-public class ShowInstitutionPhotoInstitution extends HttpServlet {
+public class ShowProfileAvatar extends HttpServlet {
 
     /**
      * Processes requests for both HTTP
@@ -33,11 +35,11 @@ public class ShowInstitutionPhotoInstitution extends HttpServlet {
         try {
             long index = Long.valueOf(request.getParameter("index"));
 
-            PhotosInstitutionDao photosInstitutionDao = new PhotosInstitutionDao();
-            PhotosInstitution photoInstitution = photosInstitutionDao.getPhotoInstitutionById(index);
+            ProfileDao profileDao = new ProfileDao();
+            Profile profile = profileDao.getById(index);
 
-            response.setContentLength(photoInstitution.getPhoto().length);
-            out.write(photoInstitution.getPhoto());
+            response.setContentLength(profile.getAvatar().length);
+            out.write(profile.getAvatar());
         } finally {
             out.close();
         }

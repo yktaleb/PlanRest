@@ -17,7 +17,6 @@ public class InstitutionController {
 
     @RequestMapping(value="/places")
     public String places(HttpServletRequest request) {
-        String id = request.getParameter("id");
         return "places";
     }
 

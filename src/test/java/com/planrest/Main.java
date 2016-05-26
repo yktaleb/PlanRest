@@ -2,10 +2,10 @@ package com.planrest;
 
 //import com.planrest.models.*;
 
-import com.planrest.dao.impl.KitchenDao;
-import com.planrest.dao.impl.ServiceDao;
-import com.planrest.dao.impl.TypeDao;
+import com.planrest.dao.impl.*;
+import com.planrest.models.Friend;
 import com.planrest.models.Institution;
+import com.planrest.models.Profile;
 import com.planrest.models.Type;
 import com.planrest.util.KitchenList;
 import com.planrest.util.ServiceList;
@@ -296,10 +296,20 @@ public class Main {
 //
 //        System.out.println(institutions.size());
 
-        ArrayList<Type> types = null;
-        if (types == null) {
-            System.out.println("yes");
-        }
+//        FriendDao friendDao = new FriendDao();
+//        ProfileDao profileDao = new ProfileDao();
+//
+//        Friend friend = new Friend();
+//
+//        Profile profile1 = profileDao.getById(1L);
+//        Profile profile2 = profileDao.getById(2L);
+//        Profile profile3 = profileDao.getById(3L);
+//
+//        friend.setFriend(profile2);
+//        friend.setStatus("1");
+//        friend.setProfile(profile1);
+//
+//        friendDao.add(friend);
 
     }
 }

@@ -7,14 +7,16 @@
 <%@ page import="java.io.InputStream" %>
 <%@ page import="java.util.Enumeration" %>
 <%@ page import="com.planrest.util.*" %>
+<%@ page import="com.planrest.dao.impl.ProfileDao" %>
+<%@ page import="com.planrest.models.Profile" %>
+<%@ page import="org.springframework.security.core.context.SecurityContextHolder" %>
+<%@ page import="org.springframework.security.core.Authentication" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html lang="en">
 <head>
     <meta http-equiv="Content-Type" content="text/html"; charset="UTF-8" />
     <link href="<c:url value="/resources/css/places_style.css" />" rel="stylesheet" type="text/css">
-
-
     <title>Выбор заведения</title>
 
 </head>
@@ -27,11 +29,32 @@
 <div id="main_block">
 
     <!-- Блок с категориями поиска (находиться в левой колонке) -->
-    <%@include file="jspf/search_left_menu.jspf" %>
+    <%@include file="jspf/search_left_menu_for_places.jspf" %>
+
+    <%
+        String searchString = "";
+
+        if (request.getParameter("search_string") != null) {
+            searchString = request.getParameter("search_string");
+            session.setAttribute("search_string", searchString);
+        } else if (session.getAttribute("search_string") != null) {
+            searchString = session.getAttribute("search_string").toString();
+        } else {
+            session.setAttribute("search_string", searchString);
+        }
+
+    %>
 
     <!-- Блок поиска -->
     <div class="right_colum">
-        <%@include file="jspf/search_block.jspf" %>
+
+        <div class="search_block">
+            <form name="search_form" method="GET" action="/places">
+                <input type="text" placeholder="Поиск..." class="search_text" value="<%=searchString%>" name="search_string"/>
+                <input type="submit" value="Поиск" id="btn_search" />
+            </form>
+            <br/><br/>
+        </div>
 
         <!-- Блок в котором отображаеться список заведений -->
         <div class="list_of_places">
@@ -51,34 +74,42 @@
                     String parameterName = parameterNames.nextElement();
                     int parameterValue = 0;
                     try {
-                        parameterValue = Integer.valueOf(request.getParameter(parameterName));
-                        SelectedInstitutionList selectedInstitutionList = new SelectedInstitutionList(parameterName, parameterValue);
-                        allInstitution = selectedInstitutionList.getInstitutions();
+                        String stringParameterValue = request.getParameter(parameterName);
 
-                        if (allInstitution != null) {
+                        if (parameterName.equals("search_string")) {
+                            InstitutionDao institutionDao = new InstitutionDao();
+                            allInstitution = institutionDao.getInstitutionsByName(stringParameterValue);
+                        }  else {
+                            parameterValue = Integer.valueOf(stringParameterValue);
+                            SelectedInstitutionList selectedInstitutionList = new SelectedInstitutionList(parameterName, parameterValue);
+                            allInstitution = selectedInstitutionList.getInstitutions();
 
-                            String title = selectedInstitutionList.getTitle();
-                            String name = null;
-                            switch (title) {
-                                case "Тип":
-                                    name = TypeList.getTypeList().get(parameterValue);
-                                    break;
-                                case "Кухня":
-                                    name = KitchenList.getKitchenList().get(parameterValue);
-                                    break;
-                                case "Район":
-                                    name = RegionList.getRegionList().get(parameterValue);
-                                    break;
-                                case "Услуги":
-                                    name = ServiceList.getServiceList().get(parameterValue);
-                                    break;
+                            if (allInstitution != null) {
+
+                                String title = selectedInstitutionList.getTitle();
+                                String name = null;
+                                switch (title) {
+                                    case "Тип":
+                                        name = TypeList.getTypeList().get(parameterValue);
+                                        break;
+                                    case "Кухня":
+                                        name = KitchenList.getKitchenList().get(parameterValue);
+                                        break;
+                                    case "Район":
+                                        name = RegionList.getRegionList().get(parameterValue);
+                                        break;
+                                    case "Услуги":
+                                        name = ServiceList.getServiceList().get(parameterValue);
+                                        break;
+                                }
+
+                                %>
+                                <h1><%=title%>: <%=name%></h1>
+                                <%
 
                             }
-
-            %>
-                            <h1><%=title%>: <%=name%></h1>
-            <%
                         }
+
                     } catch (Exception e) {
                         allInstitution = null;
                     }
@@ -108,19 +139,20 @@
 
                 <div class="img_place">
                     <a href="institution?institution_id=<%=institution.getId()%>">
-                        <img src="<%=request.getContextPath()%>/ShowInstitutionLogo?index=<%=institution.getId()%>" alt="">
+                        <%if (institution.getAvatar() == null) {
+                        %>
+                            <img src="/resources/images/camera_200.png" alt="">
+                        <%} else {%>
+                            <img src="<%=request.getContextPath()%>/ShowInstitutionLogo?index=<%=institution.getId()%>" alt="">
+                        <%}%>
                     </a>
                 </div>
 
                 <div class="short_inf">
                     <div class="center">
                         <div class="inf">
-                            <div class = "place_name">
-                                <a href="institution?institution_id=<%=institution.getId()%>"><b>Название:</b></a>
-                            </div>
-
                             <div class = "place_name" id="pl_nm">
-                                <a href="institution?institution_id=<%=institution.getId()%>"><%=institution.getName()%></a>
+                                <a href="institution?institution_id=<%=institution.getId()%>"><h2><%=institution.getName()%></h2></a>
                             </div>
                         </div>
 
@@ -130,7 +162,7 @@
                             </div>
 
                             <div class = "region" id="reg">
-                                Оболонский
+                                <%=institution.getRegion()%>
                             </div>
                         </div>
 

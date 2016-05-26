@@ -9,6 +9,7 @@ import org.hibernate.mapping.Column;
 import org.hibernate.mapping.Table;
 
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class ProfileDao extends HibernatedDao<Profile> {
@@ -73,6 +74,28 @@ public class ProfileDao extends HibernatedDao<Profile> {
         } finally {
             HibernateUtil.closeSession(session);
         }
+    }
+
+    public ArrayList<Profile> getProfilesByName(String name) {
+        name = name.toUpperCase();
+//        int length = name.length();
+        ArrayList<Profile> profiles = new ArrayList<Profile>();
+        for (Profile profile : getAllProfile()) {
+            if (profile.getName().toUpperCase().equals(name)) {
+                profiles.add(profile);
+            }
+        }
+        return profiles;
+    }
+
+    public Profile getProfileByUserName(String username) {
+        Profile profile = new Profile();
+        for (Profile searchProfile : getAllProfile()) {
+            if (searchProfile.getEmail().equals(username)) {
+                profile = searchProfile;
+            }
+        }
+        return profile;
     }
 
     public static boolean getIsThere() {

@@ -42,6 +42,15 @@
         <url-pattern>/ShowInstitutionPhotoInstitution</url-pattern>
     </servlet-mapping>
 
+    <servlet>
+        <servlet-name>ShowProfileAvatar</servlet-name>
+        <servlet-class>com.planrest.work_with_image.ShowProfileAvatar</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ShowProfileAvatar</servlet-name>
+        <url-pattern>/ShowProfileAvatar</url-pattern>
+    </servlet-mapping>
+
 
     <listener>
         <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>

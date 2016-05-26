@@ -9,16 +9,11 @@ import javax.servlet.http.HttpServletRequest;
 import java.io.UnsupportedEncodingException;
 
 @Controller
-public class HomeController {
+public class LoginController {
 
     @RequestMapping(value = {"/", "/login"}, method = RequestMethod.GET)
     public String login() {
         return "login_and_registration/login";
-    }
-
-    @RequestMapping(value = "/home", method = RequestMethod.GET)
-    public String home() {
-        return "home";
     }
 
     @RequestMapping(value = "/forgot_password", method = RequestMethod.GET)
@@ -26,7 +21,6 @@ public class HomeController {
         ProfileDao.setIsThere(true);
         return "login_and_registration/forgot_password";
     }
-
 
     @RequestMapping(value = "/change_password", method = RequestMethod.POST)
     public String changePassword(HttpServletRequest request) {

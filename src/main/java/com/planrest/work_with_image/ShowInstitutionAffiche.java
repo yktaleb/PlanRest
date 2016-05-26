@@ -16,10 +16,6 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.io.OutputStream;
 
-/**
- *
- * @author Tim
- */
 public class ShowInstitutionAffiche extends HttpServlet {
 
     /**

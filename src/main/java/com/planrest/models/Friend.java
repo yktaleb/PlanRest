@@ -7,15 +7,6 @@ import javax.persistence.*;
 public class Friend extends Model{
 
     public Friend() {
-        super();
-    }
-
-    public Friend(Long id) {
-        super(id);
-    }
-
-    public Friend(Profile friend) {
-        this.friend = friend;
     }
 
     @Id
@@ -23,13 +14,15 @@ public class Friend extends Model{
     @Column(name = "id", nullable = false)
     private Long id;
 
+    @Column(name = "status", nullable = false)
+    private String status;
+
     @ManyToOne
     @JoinColumn(name = "profile_id", nullable = false)
     private Profile profile;
 
-    @OneToOne
-    @JoinColumn(name = "id_friend", nullable = false)
-    private Profile friend;
+    @Column(name = "id_friend", nullable = false)
+    private Long idFriend;
 
     public Long getId() {
         return id;
@@ -47,12 +40,22 @@ public class Friend extends Model{
         this.profile = profile;
     }
 
-    public Profile getFriend() {
-        return friend;
+    public Long getIdFriend() {
+        return idFriend;
     }
 
-    public void setFriend(Profile friend) {
-        this.friend = friend;
+    public void setIdFriend(Long idFriend) {
+        this.idFriend = idFriend;
     }
+
+    public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
+    }
+
+
 }
 

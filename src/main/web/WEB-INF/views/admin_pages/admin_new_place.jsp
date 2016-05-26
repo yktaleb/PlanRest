@@ -179,7 +179,7 @@
 
     %>
 
-    <form method="POST"  action="admin_new_place_check" acceptCharset="UTF-8" enctype="multipart/form-data">
+    <form method="GET"  action="admin_new_place_check" acceptCharset="UTF-8" enctype="multipart/form-data">
         <div id="main-block">
             <p><h3>Заполните поля указаной информацией о заведении</h3></p>
             <ol>

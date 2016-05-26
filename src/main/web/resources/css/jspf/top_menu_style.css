@@ -1,5 +1,4 @@
 
-/*Меню*/
 .topmenu{
     width: 100%;
 }
@@ -8,13 +7,13 @@
     list-style-type: none;
     padding: 0;
     margin: 0 auto;
-    width: 800px;
+    width: 900px;
     float: right;
 }
 
 .topmenu li{
     color: #030303;
-    display:  block;
+    display: block;
     float: left;
     min-height: 25px;
     font-family: Arial, sans-serif;
@@ -36,7 +35,6 @@
 }
 
 .menu{
-    /*Следующие две точки прижимают меню к верху экрана*/
     position:absolute;
     top: 0;
     right: 0;
@@ -49,5 +47,4 @@
     min-height: 25px;
     background-color: #030303;
     padding-top: 10px;
-
 }

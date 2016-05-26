@@ -143,6 +143,10 @@ public class AdminController {
         }
         institution.setAvatar(bytes);
 
+        for (byte aByte : bytes) {
+            System.out.print(aByte);
+        }
+
         institution.setName(values[0]);
         institution.setRegion(region);
         institution.setPhoneNumber(values[1]);
@@ -169,20 +173,25 @@ public class AdminController {
             kitchenDao.addList(kitchenList);
         }
 
-        ArrayList<Service> serviceList = new ArrayList<Service>();
-        for (String service : services) {
-            serviceList.add(new Service(service, institution));
+        if (!services[0].equals("Nothing")) {
+            ArrayList<Service> serviceList = new ArrayList<Service>();
+            for (String service : services) {
+                serviceList.add(new Service(service, institution));
+            }
+            serviceDao.addList(serviceList);
+
         }
-        serviceDao.addList(serviceList);
 
         ArrayList<PhotosInstitution> photoInstitutionList = new ArrayList<PhotosInstitution>();
         for (int i = 0; i < images.length; i++) {
             MultipartFile file = images[i];
-            try {
-                byte[] imageBytes = file.getBytes();
-                photoInstitutionList.add(new PhotosInstitution(imageBytes, institution));
-            } catch (Exception e) {
-                e.getMessage();
+            if (!file.isEmpty()) {
+                try {
+                    byte[] imageBytes = file.getBytes();
+                    photoInstitutionList.add(new PhotosInstitution(imageBytes, institution));
+                } catch (Exception e) {
+                    e.getMessage();
+                }
             }
         }
         photosInstitutionDao.addList(photoInstitutionList);
@@ -191,11 +200,14 @@ public class AdminController {
         ArrayList<Affiche> afficheList = new ArrayList<Affiche>();
         for (int i = 0; i < affiches.length; i++) {
             MultipartFile file = affiches[i];
-            try {
-                byte[] afficheBytes = file.getBytes();
-                afficheList.add(new Affiche(afficheBytes, institution));
-            } catch (Exception e) {
-                e.getMessage();
+            if (!file.isEmpty()) {
+                System.out.println("хуйня");
+                try {
+                    byte[] afficheBytes = file.getBytes();
+                    afficheList.add(new Affiche(afficheBytes, institution));
+                } catch (Exception e) {
+                    e.getMessage();
+                }
             }
         }
         afficheDao.addList(afficheList);

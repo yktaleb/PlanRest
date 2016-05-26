@@ -246,6 +246,7 @@ body {
 
 /*Афиша*/
 
+
 #afisha{
     margin-left: 50px;
     font-size: 20px;
@@ -260,18 +261,24 @@ body {
 
 .layout div {
     float: left;
+    overflow: hidden;
+    height: 397px;
 }
 
 .col {
+    display: inline-block;
     /*background: #C7E3E4; */
     width: 33%;
 }
-
 
 .layout img{
     display:block;
     margin:0 auto;
     padding-bottom: 15px;
+    max-height: 100%;
+    max-width: 100%;
+    vertical-align: middle;
+    position: relative;
 }
 
 .button{
