@@ -69,7 +69,7 @@
                 </div>
 
                 <div class = "redact">
-                    <a href="">Редактировать</a>
+                    <a href="edit_profile">Редактировать</a>
                 </div>
             </div>
 

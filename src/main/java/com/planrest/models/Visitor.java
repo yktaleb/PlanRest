@@ -16,7 +16,7 @@ public class Visitor extends Model{
         super(id);
     }
 
-    public Visitor(Date date, String time, int institutionId, int profileId) {
+    public Visitor(String date, String time, Long institutionId, Long profileId) {
         this.date = date;
         this.time = time;
         this.institutionId = institutionId;
@@ -29,17 +29,16 @@ public class Visitor extends Model{
     private Long id;
 
     @Column(name = "date", nullable = false)
-    @Temporal(TemporalType.DATE)
-    private Date date;
+    private String date;
 
     @Column(name = "time", nullable = false)
     private String time;
 
     @Column(name = "institution_id", nullable = false)
-    private int institutionId;
+    private Long institutionId;
 
     @Column(name = "profile_id", nullable = false)
-    private int profileId;
+    private Long profileId;
 
     public Long getId() {
         return id;
@@ -49,11 +48,11 @@ public class Visitor extends Model{
         this.id = id;
     }
 
-    public Date getDate() {
+    public String getDate() {
         return date;
     }
 
-    public void setDate(Date date) {
+    public void setDate(String date) {
         this.date = date;
     }
 
@@ -65,20 +64,19 @@ public class Visitor extends Model{
         this.time = time;
     }
 
-    public int getInstitutionId() {
+    public Long getInstitutionId() {
         return institutionId;
     }
 
-    public void setInstitutionId(int institutionId) {
+    public void setInstitutionId(Long institutionId) {
         this.institutionId = institutionId;
     }
 
-    public int getProfileId() {
+    public Long getProfileId() {
         return profileId;
     }
 
-    public void setProfileId(int profileId) {
+    public void setProfileId(Long profileId) {
         this.profileId = profileId;
     }
-
 }

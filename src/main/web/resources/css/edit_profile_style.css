@@ -1,0 +1,433 @@
+body {
+    background-color: #17161F;
+    font-family: Arial, sans-serif;
+    min-width: 1360px;
+    color: #FAF2F2;
+    font-family: Arial, sans-serif;
+}
+
+#main-block{
+    /*Выравнивание блока по центру*/
+    width: 1100px;
+    max-width: 1350px;
+    min-width: 1350px;
+    height: auto;
+    margin: 0 auto;
+    margin-top: 40px;
+    margin-bottom: 40px;
+    background-color: rgba(33, 27, 27, 0.9);
+    /*background-color: #353067;*/
+    border: 2px solid silver;
+    padding: 15px;
+    border-radius: 15px;
+    min-width: 800px;
+    overflow: hidden;
+}
+
+label{
+    display: inline-block;
+    width: 200px;
+    margin-left: 25px;
+    font-size: 15px;
+    vertical-align: top;
+}
+
+input{
+    display: inline-block;
+    width: 40%;
+    height: 20px;
+    font-size: 12px;
+    border: 2px solid silver;
+    border-radius: 5px;
+}
+
+textarea{
+    display: inline-block;
+    max-height: 170px;
+    max-width: 70%;
+    font-size: 12px;
+    border: 2px solid silver;
+    border-radius: 7px;
+}
+
+.img_place, .img_afisha{
+    margin-left: 25px;
+}
+
+.add_new_place{
+    display: block;
+    margin-left: 25px;
+    width: 150px;
+    height: 30px;
+    font-size: 20px;
+}
+
+/*1*/
+
+.wrapper-dropdown-1 {
+    /* Размер и позиционирование */
+    display: inline-block;
+    position: relative;
+    z-index: 100;
+    width: 37%;
+    margin: 0 auto;
+    padding: 5px 5px 5px 30px;
+
+    /* Стили */
+    background: #fff;
+    border: 1px solid silver;
+    cursor: pointer;
+    outline: none;
+}
+
+.wrapper-dropdown-1:after {
+    content: "";
+    width: 0;
+    height: 0;
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    margin-top: -3px;
+    border-width: 6px 6px 0 6px;
+    border-style: solid;
+    border-color: #ffaa9f transparent;
+}
+
+.wrapper-dropdown-1 .dropdown {
+    /* Размер и позиционирование */
+    position: absolute;
+    z-index: 100;
+    top: 100%;
+    margin-top: 1px; /* граница оболочки */
+    left: -1px;
+    right: -1px;
+    height: 150px;
+    overflow: auto;
+
+    /* Стили */
+    background: white;
+    border: 1px solid silver;
+    border-top: none;
+    list-style: none;
+    transition: all 0.3s ease-out;
+
+    opacity: 0;
+    pointer-events: none;
+}
+
+.wrapper-dropdown-1 .dropdown li {
+    position: relative;
+}
+
+.wrapper-dropdown-1 .dropdown li label {
+    display: block;
+    padding: 10px 10px 10px 30px;
+    border-bottom: 1px dotted #1ccfcf;
+    transition: all 0.3s ease-out;
+}
+
+.wrapper-dropdown-1 .dropdown li:last-of-type label {
+    border: none;
+}
+
+.wrapper-dropdown-1 .dropdown li input /* Чеки */ {
+    position: absolute;
+    display: block;
+    right: 10px;
+    top: 50%;
+    margin-top: -8px;
+}
+
+/* При наведении курсора*/
+
+.wrapper-dropdown-1 .dropdown li:hover label {
+    background: #f0f0f0;
+}
+
+.wrapper-dropdown-1 .dropdown li input:checked ~ label {
+    color: grey;
+    text-decoration: line-through;
+}
+
+/* Красные линии */
+/*.wrapper-dropdown-1 .dropdown:before,
+.wrapper-dropdown-1:before {
+ content: "";
+ width: 4px;
+ height: 100%;
+ position: absolute;
+ top: 0;
+ left: 15px;
+ border: 1px solid #ffaa9f;
+ border-top: none;
+ border-bottom: none;
+ z-index: 2;
+}*/
+
+/* Второй пример: */
+/* Градиенты для красной линии */
+
+/*.wrapper-dropdown-4 .dropdown,
+.wrapper-dropdown-4 {
+ background: linear-gradient(left, white 5%, #ffaa9f 5%, #ffaa9f 5.3%, white 5.3%, white 6.5%, #ffaa9f 6.5%, #ffaa9f 6.8%, white 6.8%);
+}
+
+.wrapper-dropdown-4 .dropdown li:hover label {
+ background: linear-gradient(left, #f0F0F0 5%, #ffaa9f 5%, #ffaa9f 5.3%, #f0F0F0 5.3%, #f0F0F0 6.5%, #ffaa9f 6.5%, #ffaa9f 6.8%, #f0F0F0 6.8%);
+}*/
+
+/* Активное состояние */
+
+.wrapper-dropdown-1.active:after {
+    border-width: 0 6px 6px 6px;
+}
+
+.wrapper-dropdown-1.active .dropdown {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+/*2*/
+
+.region_list{
+    display: inline-block;
+    width: 40%;
+    height: auto;
+    /*background-color: #9C27B0;*/
+}
+
+ol{
+    list-style-type: none;
+}
+
+.rg_list input{
+    width: 15px;
+    display: inline-block;
+}
+
+
+/*3*/
+
+.wrapper-dropdown-3 {
+    /* Размер и позиционирование */
+    display: inline-block;
+    position: relative;
+    width: 37%;
+    margin: 0 auto;
+    padding: 5px 5px 5px 30px;
+
+    /* Стили */
+    background: #fff;
+    border: 1px solid silver;
+    cursor: pointer;
+    outline: none;
+}
+
+.wrapper-dropdown-3:after {
+    content: "";
+    width: 0;
+    height: 0;
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    margin-top: -3px;
+    border-width: 6px 6px 0 6px;
+    border-style: solid;
+    border-color: #ffaa9f transparent;
+}
+
+.wrapper-dropdown-3 .dropdown {
+    /* Размер и позиционирование */
+    position: absolute;
+    z-index: 50;
+    top: 100%;
+    margin-top: 1px; /* граница оболочки */
+    left: -1px;
+    right: -1px;
+
+    /* Стили */
+    background: white;
+    border: 1px solid silver;
+    border-top: none;
+    list-style: none;
+    transition: all 0.3s ease-out;
+
+    opacity: 0;
+    pointer-events: none;
+}
+
+.wrapper-dropdown-3 .dropdown li {
+    position: relative;
+}
+
+.wrapper-dropdown-3 .dropdown li label {
+    display: block;
+    padding: 10px 10px 10px 30px;
+    border-bottom: 1px dotted #1ccfcf;
+    transition: all 0.3s ease-out;
+}
+
+.wrapper-dropdown-3 .dropdown li:last-of-type label {
+    border: none;
+}
+
+.wrapper-dropdown-3 .dropdown li input /* Чеки */ {
+    position: absolute;
+    display: block;
+    right: 10px;
+    top: 50%;
+    margin-top: -8px;
+}
+
+/* При наведении курсора*/
+
+.wrapper-dropdown-3 .dropdown li:hover label {
+    background: #f0f0f0;
+}
+
+.wrapper-dropdown-3 .dropdown li input:checked ~ label {
+    color: grey;
+    text-decoration: line-through;
+}
+
+/* Красные линии */
+.wrapper-dropdown-3 .dropdown:before,
+.wrapper-dropdown-3:before {
+    content: "";
+    width: 4px;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 15px;
+    border: 1px solid #ffaa9f;
+    border-top: none;
+    border-bottom: none;
+    z-index: 100;
+}
+
+
+
+/* Активное состояние */
+
+.wrapper-dropdown-3.active:after {
+    border-width: 0 6px 6px 6px;
+}
+
+.wrapper-dropdown-3.active .dropdown {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+/*4*/
+
+.wrapper-dropdown-4 {
+    /* Размер и позиционирование */
+    display: inline-block;
+    position: relative;
+    width: 37%;
+    margin: 0 auto;
+    padding: 5px 5px 5px 30px;
+
+    /* Стили */
+    background: #fff;
+    border: 1px solid silver;
+    cursor: pointer;
+    outline: none;
+}
+
+.wrapper-dropdown-4:after {
+    content: "";
+    width: 0;
+    height: 0;
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    margin-top: -3px;
+    border-width: 6px 6px 0 6px;
+    border-style: solid;
+    border-color: #ffaa9f transparent;
+}
+
+.wrapper-dropdown-4 .dropdown {
+    /* Размер и позиционирование */
+    position: absolute;
+    z-index: 25;
+    top: 100%;
+    margin-top: 1px; /* граница оболочки */
+    left: -1px;
+    right: -1px;
+
+    /* Стили */
+    background: white;
+    border: 1px solid silver;
+    border-top: none;
+    list-style: none;
+    transition: all 0.3s ease-out;
+
+    opacity: 0;
+    pointer-events: none;
+}
+
+.wrapper-dropdown-4 .dropdown li {
+    position: relative;
+}
+
+.wrapper-dropdown-4 .dropdown li label {
+    display: block;
+    padding: 10px 10px 10px 30px;
+    border-bottom: 1px dotted #1ccfcf;
+    transition: all 0.3s ease-out;
+}
+
+.wrapper-dropdown-4 .dropdown li:last-of-type label {
+    border: none;
+}
+
+.wrapper-dropdown-4 .dropdown li input /* Чеки */ {
+    position: absolute;
+    display: block;
+    right: 10px;
+    top: 50%;
+    margin-top: -8px;
+}
+
+/* При наведении курсора*/
+
+.wrapper-dropdown-4 .dropdown li:hover label {
+    background: #f0f0f0;
+}
+
+.wrapper-dropdown-4 .dropdown li input:checked ~ label {
+    color: grey;
+    text-decoration: line-through;
+}
+
+/* Красные линии */
+.wrapper-dropdown-4 .dropdown:before,
+.wrapper-dropdown-4:before {
+    content: "";
+    width: 4px;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 15px;
+    border: 1px solid #ffaa9f;
+    border-top: none;
+    border-bottom: none;
+    z-index: 100;
+}
+
+
+
+/* Активное состояние */
+
+.wrapper-dropdown-4.active:after {
+    border-width: 0 6px 6px 6px;
+}
+
+.wrapper-dropdown-4.active .dropdown {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+

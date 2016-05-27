@@ -3,10 +3,7 @@ package com.planrest;
 //import com.planrest.models.*;
 
 import com.planrest.dao.impl.*;
-import com.planrest.models.Friend;
-import com.planrest.models.Institution;
-import com.planrest.models.Profile;
-import com.planrest.models.Type;
+import com.planrest.models.*;
 import com.planrest.util.KitchenList;
 import com.planrest.util.ServiceList;
 
@@ -310,6 +307,17 @@ public class Main {
 //        friend.setProfile(profile1);
 //
 //        friendDao.add(friend);
+
+//                    Visitor visitor = new Visitor();
+//                    visitor.setDate("123");
+//                    visitor.setTime("1231e");
+//                    visitor.setInstitutionId(2L);
+//                    visitor.setProfileId(2L);
+//
+//                    VisitorDao visitorDao = new VisitorDao();
+//                    visitorDao.add(visitor);
+
+        ProfileDao profileDao = new ProfileDao();
 
     }
 }

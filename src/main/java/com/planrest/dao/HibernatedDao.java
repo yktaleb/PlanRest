@@ -40,6 +40,19 @@ public abstract class HibernatedDao<T extends Model> implements AbstractDao<T> {
     }
 
     @Override
+    public void update(T model) {
+        try {
+            startOperation();
+            session.update(model);
+            transaction.commit();
+        } catch (Exception e) {
+            e.printStackTrace();
+        } finally {
+            HibernateUtil.closeSession(session);
+        }
+    }
+
+    @Override
     public void remove(T model) {
         try {
             startOperation();
@@ -71,18 +84,7 @@ public abstract class HibernatedDao<T extends Model> implements AbstractDao<T> {
 
     }
 
-    @Override
-    public void update(T model) {
-        try {
-            startOperation();
-            session.update(model);
-            transaction.commit();
-        } catch (Exception e) {
-            e.printStackTrace();
-        } finally {
-            HibernateUtil.closeSession(session);
-        }
-    }
+
 
 
     @Override

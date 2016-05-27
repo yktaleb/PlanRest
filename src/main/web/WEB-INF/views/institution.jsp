@@ -248,25 +248,28 @@
     <!-- Всплівающее окно для заполнения заявки на посищение -->
     <a href="#x" class="overlay" id="win1"></a>
     <div class="popup">
-        <form method="GET"  action="admin_new_place_check" acceptCharset="UTF-8" >
-        <h3>Запись на посещение заведения</h3>
-        <p>Заполните указаные поля:</p>
-        <br/>
-        <label for="date">Дата посещения:</label>
-        <input type="date" id="date" />
-        <br/><br/>
-        <label for="time">Время посещения:</label>
-        <input type="time" id="time" />
-        <br/><br/>
-        <p>После заполнения и отправки заявки вы будет внесены в список участников.</p>
-        <p>Желаем хорошо провести время)</p>
-        <br/>
-        <div id="button">
-            <input type="submit" class="submit"value="Отправить заявку" />
-        </div>
-        <a class="close" title="Закрыть" href="#close"></a>
+        <form method="post" action="become_a_party" acceptCharset="UTF-8" >
+            <input type="hidden" name="participantId" value="<%=myProfile.getId()%>">
+            <input type="hidden" name="institutionId" value="<%=institution.getId()%>">
+            <h3>Запись на посещение заведения</h3>
+            <p>Заполните указаные поля:</p>
+            <br/>
+            <label for="date">Дата посещения:</label>
+            <input type="date" id="date" name="date"/>
+            <br/><br/>
+            <label for="time">Время посещения:</label>
+            <input type="time" id="time" name="time"/>
+            <br/><br/>
+            <p>После заполнения и отправки заявки вы будет внесены в список участников.</p>
+            <p>Желаем хорошо провести время)</p>
+            <br/>
+            <div id="button">
+                <input type="submit" class="submit"value="Отправить заявку" />
+            </div>
+            <a class="close" title="Закрыть" href="#close"></a>
         </form>
     </div>
+
 
     <!-- Таблица запланированіх посищений -->
     <div id="calendar"><h3>Календарь заведения</h3></div>

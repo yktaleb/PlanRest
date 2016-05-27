@@ -552,11 +552,11 @@
       </column>
       <column id="146" parent="22" name="date">
         <mandatory>1</mandatory>
-        <data-type>date</data-type>
+        <data-type>varchar(20)</data-type>
       </column>
       <column id="147" parent="22" name="time">
         <mandatory>1</mandatory>
-        <data-type>time(6)</data-type>
+        <data-type>varchar(20)</data-type>
       </column>
       <column id="148" parent="22" name="Institution_id">
         <mandatory>1</mandatory>
